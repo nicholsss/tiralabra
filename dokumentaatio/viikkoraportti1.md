@@ -3,17 +3,16 @@
 * Valinnut aiheen
 * Alustanut projektin
 * Perehdyin labyrintteihin ratkaiseviin algoritmeihin.
-
-
+* Perehdyin labyrintteihin luoviin algoritmeihinn
 ## Mitä opin tällä viikolla
 * Labyrintin tuottamiseen on useita eri algoritmejä
 * Labyrintin ratkaisemiseen on useita eri algoritmejä
 
 
 ## Mitä teen seuraavaksi
-* Perehdyn *A Algoritmiin
-* Alan työstämään leveyshaun käyttöä.
-* Otan selvää miten pystyn antamaan labyrintin tiedot movingai sivulta ohjelmalle.
+* Perehdyn Kruskalin algoritmiin
+* Alan työstämään projektin alkua
+* Otan selvää että millä visualisoin labyrintin tekemisen.
 
 ## Ajan käyttö
 * 4 Tuntia
