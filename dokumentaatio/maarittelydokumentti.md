@@ -2,22 +2,21 @@
 
 
 ## Käyttötarkoitus
-Sovelluksen avulla voidaan verrata eri algoritmien nopeutta löytää reitti labyrintin läpi.
+Sovelluksen tarkoitus on luoda satunnainen labyrintti.
 
 ## Algoritmit ja tietorakenteet
-Käytän leveyshakua löytämään labyrintin lyhyimmän reitin, tietorakenteina täyssä käytän jonoa, sekä taulukkoa.
-
-Toisena algoritminä käytän *A Algoritmia, joka on tehokkain algoritmi reitin löytämiseen.
+Käytän Kruskalin algoritmia, johon on lisätty satunnaista käyttäytymistä, jotta voimme saada satunnaisia labyrinttejä.
+Tietorakenteina käytän jonoa ja taulua.
 
 ## Syötteet
-Syötteenä ohjelmalle annetaan labyrintti [Movingai](https://www.movingai.com/benchmarks/) sivulta, josta molemmat algoritmi aloittavat samasta kohtaan, ja pyrkivät pääsemään labyrintin loppuun.
+Syötteenä käyttäjä antaa siitä, että kuinka suuri labyrintti halutaan generoida.
 
 ## Aikavaativuudet
-Syvyyshaulla tähdätään O(|V| + |E|) aikavaativuuteen, ja tilavaativuuteen O(|V|) 
-*A Tähdätään O(|E|) aikavaativuuteen, ja tilavaatutena pyritään saavuttamaan (|V|)
-## Lähteet
+Aikavaativudeltaan Kruskalin pyritään tulisi olla O(∝(V))
+# Lähteet
+Ja tilavaativuudeltaan O(|V|)
 
 
-* [Maze solving algorithm](https://en.wikipedia.org/wiki/Maze_solving_algorithm) Wikipedia
-* [Labyrintit](https://www.movingai.com/benchmarks/maze/index.html)
+* [Maze generating algorithm](https://en.m.wikipedia.org/wiki/Maze_generation_algorithm) Wikipedia
+* [Stackoverflow](https://stackoverflow.com/questions/38502/whats-a-good-algorithm-to-generate-a-maze)
 
