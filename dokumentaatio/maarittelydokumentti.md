@@ -13,8 +13,9 @@ Syötteenä käyttäjä antaa siitä, että kuinka suuri labyrintti halutaan gen
 
 ## Aikavaativuudet
 Aikavaativudeltaan Kruskalin pyritään tulisi olla O(∝(V))
-# Lähteet
 Ja tilavaativuudeltaan O(|V|)
+# Lähteet
+
 
 
 * [Maze generating algorithm](https://en.m.wikipedia.org/wiki/Maze_generation_algorithm) Wikipedia
