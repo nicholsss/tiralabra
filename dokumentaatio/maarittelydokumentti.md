@@ -5,15 +5,13 @@
 Sovelluksen tarkoitus on luoda satunnainen labyrintti.
 
 ## Algoritmit ja tietorakenteet
-Käytän Kruskalin algoritmia, johon on lisätty satunnaista käyttäytymistä, jotta voimme saada satunnaisia labyrinttejä.
-Tietorakenteina käytän jonoa ja taulua.
-Toisena vaihtoehtona käytön rekursiivista peruuttavaa hakua labyrintin luomiseen, jossa käyttäisin tietorakenteina pinoa ja taulua
+Labyrintin luominen tapahtuu syvyyshaulla, johon on implementoitu  rekursiivinen peruuttavahaku, tietorakenteina käytän taulukkoa, ja pinoa.
 
 ## Syötteet
 Syötteenä käyttäjä antaa siitä, että kuinka suuri labyrintti halutaan generoida.
 
 ## Aikavaativuudet
-Aikavaativudeltaan Kruskalin pyritään tulisi olla O(∝(V))
+Aikavaativuudeltaan peruuttava syvyyshaku tulisi olla  O((|V| + |E|))
 Ja tilavaativuudeltaan O(|V|)
 # Lähteet
 
