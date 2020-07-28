@@ -2,10 +2,11 @@
 
 
 ## Käyttötarkoitus
-Sovelluksen tarkoitus on luoda satunnainen labyrintti.
+Sovelluksen tarkoitus on luoda satunnainen labyrintti kahdella eri algoritmillä, recursive backtracking, ja Kruskalin algoritmilla
 
 ## Algoritmit ja tietorakenteet
 Labyrintin luominen tapahtuu syvyyshaulla, johon on implementoitu  rekursiivinen peruuttavahaku, tietorakenteina käytän taulukkoa, ja pinoa.
+Toisena algoritminä käytän satunnaista Kruskalin algoritmia, jonka 
 
 ## Syötteet
 Syötteenä käyttäjä antaa siitä, että kuinka suuri labyrintti halutaan generoida.
@@ -13,6 +14,7 @@ Syötteenä käyttäjä antaa siitä, että kuinka suuri labyrintti halutaan gen
 ## Aikavaativuudet
 Aikavaativuudeltaan peruuttava syvyyshaku tulisi olla  O((|V| + |E|))
 Ja tilavaativuudeltaan O(|V|)
+Kruskalin aikavaativuus on O(∝(V))
 # Lähteet
 
 
