@@ -6,7 +6,7 @@ Sovelluksen tarkoitus on luoda satunnainen labyrintti kahdella eri algoritmillä
 
 ## Algoritmit ja tietorakenteet
 Labyrintin luominen tapahtuu syvyyshaulla, johon on implementoitu  rekursiivinen peruuttavahaku, tietorakenteina käytän taulukkoa, ja pinoa.
-Toisena algoritminä käytän satunnaista Kruskalin algoritmia, jonka 
+Toisena algoritminä käytän satunnaista Kruskalin algoritmia, jonka tietorakenteina käytän listaa, pinoa ja taulua.
 
 ## Syötteet
 Syötteenä käyttäjä antaa siitä, että kuinka suuri labyrintti halutaan generoida.
