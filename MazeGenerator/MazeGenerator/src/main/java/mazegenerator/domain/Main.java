@@ -9,6 +9,12 @@ package mazegenerator.domain;
  *
  * @author Nicholas
  */
-public class Node {
-    
+public class Main {
+    public static void main(String[] args) {
+        int x = 6;
+        int y = 6;
+        
+        DFS dfs = new DFS(x,y);
+        //dfs.GenerateMaze(10, 10);
+    }
 }
