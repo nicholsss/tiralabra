@@ -10,11 +10,16 @@ package mazegenerator.domain;
  * @author Nicholas
  */
 public class Main {
+
+    /**
+     *
+     * @param args ohjelman käynnistyminen
+     */
     public static void main(String[] args) {
-        int x = 6;
-        int y = 6;
-        
-        DFS dfs = new DFS(x,y);
+        int x = 2;
+        int y = 4;
+
+        DFS dfs = new DFS(x, y);
         //dfs.GenerateMaze(10, 10);
     }
 }

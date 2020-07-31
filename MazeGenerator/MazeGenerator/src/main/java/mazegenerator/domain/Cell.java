@@ -27,6 +27,11 @@ public class Cell {
     private List<Cell> neighbors;
     private boolean[] walls = {true, true, true, true};
 
+    /**
+     *
+     * @param x saatu x arvo
+     * @param y saatu y arvo
+     */
     public Cell(int x, int y) {
 
         this.x = x;
@@ -35,26 +40,51 @@ public class Cell {
         this.walls = walls;
     }
 
+    /**
+     *
+     * @return palauttaa Cell arvon
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     *
+     * @param x muokataan x arvo
+     */
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     *
+     * @return palauttaa Cell Y arvon
+     */
     public int getY() {
         return y;
     }
 
-    public boolean getVisited() {
-        return visited;
-    }
-
+    /**
+     *
+     * @param y Muokkaa Cell y arvoa.
+     */
     public void setY(int y) {
         this.y = y;
     }
 
+    /**
+     *
+     * @return Palauttaa Cell arvon siitä onko siinä käyty.
+     */
+    public boolean getVisited() {
+        return visited;
+    }
+
+    /**
+     * Voidaaan muokata Cell käynti booleania.
+     *
+     * @param visited Cell tieto käynnistä
+     */
     public void setVisitedt(boolean visited) {
         this.visited = visited;
     }

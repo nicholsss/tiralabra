@@ -24,7 +24,7 @@ public class DFS {
     private Cell[][] grid;
     //private Cell[] gri;
     private List<Cell> grip;
-    private int x ;
+    private int x;
     private int y;
     //private  List<Cell> gr = new ArrayList<Cell>();
 
@@ -33,9 +33,11 @@ public class DFS {
 
     //Maze maze = new Maze(x, y);
     /**
+     * Tässä alustamme gridin toistaiseksi.
      *
      * @param x leveys parametri
      * @param y korkeus parametri
+     *
      */
     public DFS(int x, int y) {
         this.x = x;
@@ -61,6 +63,7 @@ public class DFS {
         GenerateMaze();
 
     }
+
     /**
      * Täältä aletaan piirtämään sokkeloa
      */
@@ -92,7 +95,8 @@ public class DFS {
             }
             System.out.println("");
         }
-
+        System.out.println(grid.length);
+        System.out.println(grid[0].length);
     }
 
 }
