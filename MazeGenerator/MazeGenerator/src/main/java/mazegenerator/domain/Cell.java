@@ -138,10 +138,10 @@ public class Cell {
             }
         }
 
-        if (neighbours.size() == 1) {
-            return neighbours.get(0);
+        if (neighbours.size() > 0) {
+            return randomNeighbour(neighbours);
         }
-        return randomNeighbour(neighbours);
+        return null;
     }
 
     /**
