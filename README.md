@@ -5,3 +5,4 @@
 
 ## Viikkoraportit
 * [Viikko 1](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/viikkoraportti1.md)
+* [Viikko 2](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/Viikkoraportti2.md)
