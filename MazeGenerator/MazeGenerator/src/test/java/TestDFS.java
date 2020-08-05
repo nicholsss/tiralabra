@@ -19,13 +19,13 @@ import static org.junit.Assert.*;
 public class TestDFS {
 
     /**
-     *Test
+     * Test
      */
     public TestDFS() {
     }
 
     /**
-     *Testing that grid is not empty
+     * Testing that grid is not empty
      */
     @Test
     public void testNotEmptyGrid() {
@@ -39,7 +39,7 @@ public class TestDFS {
     }
 
     /**
-     *Testing that Cells are not visited
+     * Testing that Cells are not visited
      */
     @Test
     public void testCellNotVisited() {

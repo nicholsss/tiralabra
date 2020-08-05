@@ -21,12 +21,12 @@ import java.util.Stack;
 public class DFS {
 
     private Stack<Cell> stack = new Stack<Cell>();
-    private Cell[][] grid;
+    //private Cell[][] grid;
     //private Cell[] gri;
-    private List<Cell> grip;
+    //private List<Cell> grip;
     private int x;
     private int y;
-    //private  List<Cell> gr = new ArrayList<Cell>();
+    private List<Cell> grid;
 
     private ArrayList<String> directions = new ArrayList<String>();
     private Cell current;
@@ -39,28 +39,16 @@ public class DFS {
      * @param y korkeus parametri
      *
      */
-    public DFS(int x, int y) {
+    public DFS(List<Cell> grid) {
+
         this.x = x;
         this.y = y;
-        grid = new Cell[x][y];
-        for (int i = 0; i < x; i++) {
-            for (int j = 0; j < y; j++) {
-                grid[i][j] = new Cell(i, j);
-                //Cell cell = new Cell(i,j);
+        this.grid = grid;
 
-            }
-        }
-        current = grid[0][0];
-
-        //Nämä vaihtoehtoisesti mukaan katsotaan.
-        /*
-        directions.add("UP");
-        directions.add("DOWN");
-        directions.add("RIGHT");
-        directions.add("LEFT");
-        Collections.shuffle(directions);
-         */
+        current = grid.get(0);
+        System.out.println(current.getVisited());
         GenerateMaze();
+        System.out.println(current.getVisited());
 
     }
 
@@ -81,8 +69,9 @@ public class DFS {
     public void DrawMaze() {
 
         current.setVisitedt(true);
+        current.CheckNeighbors(grid);
         // current.CheckNeighbors(grid);
-
+/*
         for (int i = 0; i < x; i++) {
 
             for (int j = 0; j < y; j++) {
@@ -97,6 +86,7 @@ public class DFS {
         }
         System.out.println(grid.length);
         System.out.println(grid[0].length);
+         */
     }
 
 }
