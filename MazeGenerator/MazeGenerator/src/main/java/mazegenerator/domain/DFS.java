@@ -30,6 +30,9 @@ public class DFS {
 
     private ArrayList<String> directions = new ArrayList<String>();
     private Cell current;
+    int cols;
+    int width;
+    int w;
 
     //Maze maze = new Maze(x, y);
     /**
@@ -44,11 +47,13 @@ public class DFS {
         this.x = x;
         this.y = y;
         this.grid = grid;
-
+        w = 40;
         current = grid.get(0);
         System.out.println(current.getVisited());
         GenerateMaze();
         System.out.println(current.getVisited());
+        cols = width/w;
+       
 
     }
 
@@ -68,8 +73,12 @@ public class DFS {
      */
     public void DrawMaze() {
 
-        current.setVisitedt(true);
-        current.CheckNeighbors(grid);
+        current.setVisitedt();
+        Cell next = current.CheckNeighbors(grid);
+        if (next != null) {
+            next.setVisitedt();
+            current = next;
+        }
         // current.CheckNeighbors(grid);
 /*
         for (int i = 0; i < x; i++) {

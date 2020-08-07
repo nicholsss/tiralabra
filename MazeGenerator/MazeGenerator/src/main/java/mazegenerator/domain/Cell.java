@@ -89,8 +89,12 @@ public class Cell {
      *
      * @param visited Cell tieto käynnistä
      */
-    public void setVisitedt(boolean visited) {
-        this.visited = visited;
+    public void setVisitedt() {
+        this.visited = true;
+    }
+
+    public void p() {
+        System.out.println("@");
     }
 
     /**
@@ -104,38 +108,38 @@ public class Cell {
     public Cell CheckNeighbors(List<Cell> grid) {
 
         List<Cell> neighbours = new ArrayList<Cell>();
-
-        Cell top = NeighbourInGrid(grid, new Cell(x, y - 1));
+        /*
+        Cell top = NeighbourInGrid(grid, new Cell(1, 1 - 1));
         Cell right = NeighbourInGrid(grid, new Cell(x + 1, y));
         Cell bottom = NeighbourInGrid(grid, new Cell(x, y + 1));
         Cell left = NeighbourInGrid(grid, new Cell(x - 1, y));
-        /*
-        
+         */
+
         Cell top = new Cell(x, y - 1);
         Cell right = new Cell(x + 1, y);
         Cell bottom = new Cell(x, y + 1);
         Cell left = new Cell(x - 1, y);
-         */
-        if (top != null) {
-            if (!top.visited) {
-                neighbours.add(top);
-            }
+
+        if (top != null && !top.visited) {
+
+            neighbours.add(top);
+
         }
 
-        if (right != null) {
-            if (!right.visited) {
-                neighbours.add(right);
-            }
+        if (right != null && right.visited) {
+
+            neighbours.add(right);
+
         }
-        if (bottom != null) {
-            if (!right.visited) {
-                neighbours.add(bottom);
-            }
+        if (bottom != null && !bottom.visited) {
+
+            neighbours.add(bottom);
+
         }
-        if (left != null) {
-            if (!left.visited) {
-                neighbours.add(left);
-            }
+        if (left != null && !left.visited) {
+
+            neighbours.add(left);
+
         }
 
         if (neighbours.size() > 0) {
@@ -164,6 +168,18 @@ public class Cell {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+
+        return true;
     }
 
 }

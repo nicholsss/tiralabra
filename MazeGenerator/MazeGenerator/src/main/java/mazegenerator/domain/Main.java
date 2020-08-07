@@ -20,9 +20,9 @@ public class Main {
      */
     public static void main(String[] args) {
         List<Cell> grid = new ArrayList<Cell>();
-        int x = 2;
-        int y = 4;
-
+        int x = 3;
+        int y = 3;
+        /*
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
 
@@ -30,8 +30,10 @@ public class Main {
 
             }
         }
-        DFS dfs = new DFS(grid);
-        
+         */
+        System.out.println("main");
+        //DFS dfs = new DFS(grid);
+        DfsRec maze = new DfsRec(x, y);
         //dfs.GenerateMaze(10, 10);
     }
 }
