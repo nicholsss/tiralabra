@@ -20,9 +20,9 @@ public class DfsRec {
     List<Cell> neighbours;
     int rows;
     int cols;
-    
+
     /**
-     * 
+     *
      * @param rows amout of rows for grid
      * @param cols amount of cols for grid
      */
