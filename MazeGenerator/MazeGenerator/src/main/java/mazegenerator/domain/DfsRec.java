@@ -23,7 +23,7 @@ public class DfsRec {
 
     /**
      *
-     * @param rows amout of rows for grid
+     * @param rows amount of rows for grid
      * @param cols amount of cols for grid
      */
     public DfsRec(int rows, int cols) {
@@ -42,7 +42,7 @@ public class DfsRec {
     }
 
     /**
-     * Here is our recursive method which checks our cell if it has neighbours.
+     * Here is our recursive method which checks our cell if it has neighbors.
      *
      */
     public void GenerateMaze() {
@@ -74,10 +74,10 @@ public class DfsRec {
     }
 
     /**
-     * Check if cell neighbour is in grid, and that it's not visited
+     * Check if cell neighbors is in grid, and that it's not visited
      *
-     * @param current current cell, which neighbours we need to check.
-     * @return a random neighbour from our list if it has neighbours, if not
+     * @param current current cell, which neighbors we need to check.
+     * @return a random neighbor from our list if it has neighbors, if not
      * return null
      */
     private Cell checkValidNeighbours(Cell current) {
