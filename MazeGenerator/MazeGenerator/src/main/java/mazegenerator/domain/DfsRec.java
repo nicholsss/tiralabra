@@ -27,11 +27,13 @@ public class DfsRec {
      * @param cols amount of cols for grid
      */
     public DfsRec(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
 
-        grid = new Cell[rows][cols];
+        grid = new Cell[this.rows][this.cols];
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < this.cols; j++) {
                 grid[i][j] = new Cell(i, j);
             }
         }
