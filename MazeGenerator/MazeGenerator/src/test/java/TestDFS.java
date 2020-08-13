@@ -21,7 +21,12 @@ public class TestDFS {
     /**
      * Test
      */
+    int x = 8;
+    int y = 8;
+    DfsRec dfs = new DfsRec(x, y);
+
     public TestDFS() {
+
     }
 
     /**
@@ -29,10 +34,6 @@ public class TestDFS {
      */
     @Test
     public void testNotEmptyGrid() {
-
-        int x = 8;
-        int y = 8;
-        DfsRec dfs = new DfsRec(x, y);
 
         assertNotNull(dfs);
 
@@ -51,4 +52,5 @@ public class TestDFS {
         assertEquals("Cell must be unvisited", cell.getVisited(), false);
 
     }
+
 }

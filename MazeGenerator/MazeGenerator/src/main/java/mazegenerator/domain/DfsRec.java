@@ -90,32 +90,32 @@ public class DfsRec {
 
         //Check current cell top neighbour
         if (y - 1 != -1 && !grid[x][y - 1].getVisited()) {
-            System.out.println("TOP");
+
             neighbours.add(grid[x][y - 1]);
         }
 
         //Check current cell right neighbour
         // this need to be fixed
         if (x + 1 != rows && !grid[x + 1][y].getVisited()) {
-            System.out.println("RIGHT");
+
             neighbours.add(grid[x + 1][y]);
 
         }
         //Check current cell bottom neighbour
         if (y + 1 != cols && !grid[x][y + 1].getVisited()) {
-            System.out.println("BOT");
+
             neighbours.add(grid[x][y + 1]);
         }
         //Check current cell left neighbour
         if (x - 1 != -1 && !grid[x - 1][y].getVisited()) {
-            System.out.println("LEFT");
+
             neighbours.add(grid[x - 1][y]);
         }
 
         // if there is over 0 neighbour choose one of them randomly.
         if (neighbours.size() > 0) {
             cell = neighbours.get(new Random().nextInt(neighbours.size()));
-            System.out.println(cell.getX());
+            
         }
 
         return cell;

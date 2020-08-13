@@ -20,20 +20,14 @@ public class Main {
      */
     public static void main(String[] args) {
         List<Cell> grid = new ArrayList<Cell>();
-        int x = 2;
-        int y = 3;
-        /*
-        for (int i = 0; i < x; i++) {
-            for (int j = 0; j < y; j++) {
+        int x = 6;
+        int y = 6;
 
-                grid.add(new Cell(i, j));
-
-            }
-        }
-         */
         System.out.println("main");
-        //DFS dfs = new DFS(grid);
+        long alku = System.nanoTime();
+
         DfsRec maze = new DfsRec(x, y);
-        //dfs.GenerateMaze(10, 10);
+        long loppu = System.nanoTime();
+        System.out.println("Aikaa kului " + ((loppu - alku) / 1e9) + " s");
     }
 }

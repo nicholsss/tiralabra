@@ -17,8 +17,10 @@ import java.util.Random;
  */
 /**
  *
- * Cell luokka pitää kirjaa jokaisen Cell X,Y arvosta, Visited katsoo että onko
- * siinä käyty, neighbors pitää listaa naapureista ja jokaisella Cell on seinät
+ *
+ * Cell class has values of cell x and y values, it also contains values about
+ * cell walls Cell has value visited, which tells if that current cell is
+ * visited.
  *
  * @author Nicholas
  */
@@ -27,8 +29,6 @@ public class Cell {
     private int x;
     private int y;
     private boolean visited;
-
-    // private List<Cell> neighbors;
     private boolean top;
     private boolean right;
     private boolean bottom;
@@ -36,13 +36,13 @@ public class Cell {
 
     /**
      *
-     * @param x saatu x arvo
-     * @param row saatu y arvo
+     * @param x is rows
+     * @param y is columns
      */
-    public Cell(int x, int row) {
+    public Cell(int x, int y) {
 
         this.x = x;
-        this.y = row;
+        this.y = y;
         this.visited = false;
         this.top = true;
         this.right = true;
@@ -52,7 +52,7 @@ public class Cell {
 
     /**
      *
-     * @return palauttaa Cell arvon
+     * @return cell value x
      */
     public int getX() {
         return x;
@@ -60,7 +60,7 @@ public class Cell {
 
     /**
      *
-     * @param x muokataan x arvo
+     * @param change value of x
      */
     public void setX(int x) {
         this.x = x;
@@ -68,7 +68,7 @@ public class Cell {
 
     /**
      *
-     * @return palauttaa Cell Y arvon
+     * @return cell value y
      */
     public int getY() {
         return y;
@@ -76,7 +76,7 @@ public class Cell {
 
     /**
      *
-     * @param y Muokkaa Cell y arvoa.
+     * @param change value of y
      */
     public void setY(int y) {
         this.y = y;
@@ -84,21 +84,27 @@ public class Cell {
 
     /**
      *
-     * @return Palauttaa Cell arvon siitä onko siinä käyty.
+     * @return cell visited value.
      */
     public boolean getVisited() {
         return visited;
     }
 
     /**
-     * Voidaaan muokata Cell käynti booleania.
+     * Change visited Boolean to true
      *
-     * @param visited Cell tieto käynnistä
      */
     public void setVisitedt() {
         this.visited = true;
     }
 
+    /**
+     * minus current cell x value, from next cell x value. Depending from
+     * outcome we delete left and right wall, and vice-versa when we get -1.
+     * Same goes with y value.
+     *
+     * @param next
+     */
     void removeWalls(Cell next) {
         int x = this.x - next.x;
 

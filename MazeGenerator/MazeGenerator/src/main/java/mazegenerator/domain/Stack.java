@@ -12,21 +12,22 @@ package mazegenerator.domain;
 public class Stack {
 
     private int last;
-    private Cell[] lista;
+    private Cell[] list;
 
-    public Stack(int koko) {
+    public Stack(int size) {
         last = -1;
-        lista = new Cell[koko];
+        list = new Cell[size];
 
     }
+
     /**
-     * 
+     *
      * @return cell object from stack
      */
     public Cell pop() {
 
         try {
-            Cell cell = lista[last];
+            Cell cell = list[last];
             last--;
             return cell;
         } catch (Exception e) {
@@ -35,12 +36,21 @@ public class Stack {
 
     }
 
+    /**
+     *
+     * @param cell cell object.
+     */
     public void add(Cell cell) {
         last++;
-        lista[last] = cell;
+        list[last] = cell;
 
     }
 
+    /**
+     * Check if list is empty or not
+     *
+     * @return returns Boolean depending from list
+     */
     public boolean isEmpty() {
 
         if (last == -1) {
