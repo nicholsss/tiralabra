@@ -48,10 +48,12 @@ public class DfsRec {
     public void GenerateMaze() {
         Stack<Cell> stack = new Stack<Cell>();
         //First cell where we start.
+
+
         Cell current = grid[0][0];
         current.setVisitedt();
         stack.add(current);
-        
+
         // keep going while there are cells in stack
         while (!stack.isEmpty()) {
 
@@ -62,9 +64,8 @@ public class DfsRec {
             if (next != null) {
                 next.setVisitedt();
                 stack.add(next);
-                //current.removeWalls(current);
+                current.removeWalls(next);
                 current = next;
-
                 // if we didnt get cell with neighbours take cell from top of our stack.
             } else {
                 next = stack.pop();

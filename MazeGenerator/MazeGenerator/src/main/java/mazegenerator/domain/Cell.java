@@ -29,7 +29,6 @@ public class Cell {
     private boolean visited;
 
     // private List<Cell> neighbors;
-    private boolean[] walls = {true, true, true, true};
     private boolean top;
     private boolean right;
     private boolean bottom;
@@ -38,14 +37,13 @@ public class Cell {
     /**
      *
      * @param x saatu x arvo
-     * @param y saatu y arvo
+     * @param row saatu y arvo
      */
-    public Cell(int x, int y) {
+    public Cell(int x, int row) {
 
         this.x = x;
-        this.y = y;
+        this.y = row;
         this.visited = false;
-        this.walls = walls;
         this.top = true;
         this.right = true;
         this.bottom = true;
@@ -101,26 +99,26 @@ public class Cell {
         this.visited = true;
     }
 
-    void removeWalls(Cell current) {
-        int x = this.x - current.x;
+    void removeWalls(Cell next) {
+        int x = this.x - next.x;
 
         if (x == 1) {
             this.left = false;
-            current.right = false;
+            next.right = false;
 
         } else if (x == -1) {
-            this.left = false;
-            current.bottom = false;
+            this.right = false;
+            next.left = false;
         }
 
-        int y = this.y - current.y;
+        int y = this.y - next.y;
 
         if (y == 1) {
             this.top = false;
-            current.bottom = false;
+            next.bottom = false;
         } else if (y == -1) {
             this.bottom = false;
-            current.top = false;
+            next.top = false;
         }
 
     }

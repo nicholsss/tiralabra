@@ -20,7 +20,7 @@ public class Main {
      */
     public static void main(String[] args) {
         List<Cell> grid = new ArrayList<Cell>();
-        int x = 3;
+        int x = 2;
         int y = 3;
         /*
         for (int i = 0; i < x; i++) {
