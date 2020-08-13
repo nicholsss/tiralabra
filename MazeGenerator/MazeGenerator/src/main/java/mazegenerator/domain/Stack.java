@@ -19,7 +19,10 @@ public class Stack {
         lista = new Cell[koko];
 
     }
-
+    /**
+     * 
+     * @return cell object from stack
+     */
     public Cell pop() {
 
         try {
