@@ -30,6 +30,10 @@ public class Cell {
 
     // private List<Cell> neighbors;
     private boolean[] walls = {true, true, true, true};
+    private boolean top;
+    private boolean right;
+    private boolean bottom;
+    private boolean left;
 
     /**
      *
@@ -42,6 +46,10 @@ public class Cell {
         this.y = y;
         this.visited = false;
         this.walls = walls;
+        this.top = true;
+        this.right = true;
+        this.bottom = true;
+        this.left = true;
     }
 
     /**
@@ -93,5 +101,28 @@ public class Cell {
         this.visited = true;
     }
 
+    void removeWalls(Cell current) {
+        int x = this.x - current.x;
+
+        if (x == 1) {
+            this.left = false;
+            current.right = false;
+
+        } else if (x == -1) {
+            this.left = false;
+            current.bottom = false;
+        }
+
+        int y = this.y - current.y;
+
+        if (y == 1) {
+            this.top = false;
+            current.bottom = false;
+        } else if (y == -1) {
+            this.bottom = false;
+            current.top = false;
+        }
+
+    }
 
 }

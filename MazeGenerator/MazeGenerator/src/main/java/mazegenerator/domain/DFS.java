@@ -36,7 +36,7 @@ public class DFS {
 
     //Maze maze = new Maze(x, y);
     /**
-     * Tässä alustamme gridin toistaiseksi.
+     * Init grid.
      *
      * @param x leveys parametri
      * @param y korkeus parametri
@@ -50,52 +50,9 @@ public class DFS {
         w = 40;
         current = grid.get(0);
         System.out.println(current.getVisited());
-        GenerateMaze();
+
         System.out.println(current.getVisited());
-        cols = width/w;
-       
+        cols = width / w;
 
     }
-
-    /**
-     * Täältä aletaan piirtämään sokkeloa
-     */
-    public void GenerateMaze() {
-
-        DrawMaze();
-
-    }
-
-    /**
-     * piirtää sokkelon. getVisited katsoo onko kyseisen Cell boolean true, ja
-     * jos on niin printantaan O Tämä on vain visualisointia varten.
-     *
-     */
-    public void DrawMaze() {
-
-        current.setVisitedt();
-        Cell next = current.CheckNeighbors(grid);
-        if (next != null) {
-            next.setVisitedt();
-            current = next;
-        }
-        // current.CheckNeighbors(grid);
-/*
-        for (int i = 0; i < x; i++) {
-
-            for (int j = 0; j < y; j++) {
-                if (grid[i][j].getVisited() == false) {
-                    System.out.print("*");
-                } else if (grid[i][j].getVisited() == true) {
-                    System.out.print("O");
-                }
-
-            }
-            System.out.println("");
-        }
-        System.out.println(grid.length);
-        System.out.println(grid[0].length);
-         */
-    }
-
 }

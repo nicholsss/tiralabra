@@ -51,7 +51,7 @@ public class DfsRec {
         Cell current = grid[0][0];
         current.setVisitedt();
         stack.add(current);
-
+        
         // keep going while there are cells in stack
         while (!stack.isEmpty()) {
 
@@ -62,6 +62,7 @@ public class DfsRec {
             if (next != null) {
                 next.setVisitedt();
                 stack.add(next);
+                //current.removeWalls(current);
                 current = next;
 
                 // if we didnt get cell with neighbours take cell from top of our stack.
@@ -100,7 +101,6 @@ public class DfsRec {
 
         }
         //Check current cell bottom neighbour
-        // this need to be fixed
         if (y + 1 != cols && !grid[x][y + 1].getVisited()) {
             System.out.println("BOT");
             neighbours.add(grid[x][y + 1]);
