@@ -49,7 +49,6 @@ public class DfsRec {
         Stack<Cell> stack = new Stack<Cell>();
         //First cell where we start.
 
-
         Cell current = grid[0][0];
         current.setVisitedt();
         stack.add(current);

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 import mazegenerator.domain.Cell;
-import mazegenerator.domain.DFS;
+import mazegenerator.domain.DfsRec;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -32,7 +32,7 @@ public class TestDFS {
 
         int x = 8;
         int y = 8;
-        DFS dfs = new DFS(x, y);
+        DfsRec dfs = new DfsRec(x, y);
 
         assertNotNull(dfs);
 
@@ -46,7 +46,7 @@ public class TestDFS {
         int x = 4;
         int y = 4;
         Cell cell = new Cell(x, y);
-        DFS dfs = new DFS(x, y);
+        DfsRec dfs = new DfsRec(x, y);
 
         assertEquals("Cell must be unvisited", cell.getVisited(), false);
 
