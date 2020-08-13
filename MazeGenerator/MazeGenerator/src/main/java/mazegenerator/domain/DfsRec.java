@@ -8,7 +8,7 @@ package mazegenerator.domain;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Stack;
+//import java.util.Stack;
 
 /**
  *
@@ -46,7 +46,8 @@ public class DfsRec {
      *
      */
     public void GenerateMaze() {
-        Stack<Cell> stack = new Stack<Cell>();
+        //Stack<Cell> stack = new Stack<Cell>();
+        Stack stack = new Stack(this.rows * this.cols);
         //First cell where we start.
 
         Cell current = grid[0][0];
