@@ -11,6 +11,7 @@
 * Korjaan Binary Tree bugin.
 * Keskityn kattavien testien tekemiseen.
 * Aloitan Kruskalin algoritmin tekemisen.
+* Lista tietorakenteen.
 
 
 ## Ajan käyttö
