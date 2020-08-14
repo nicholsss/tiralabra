@@ -18,3 +18,6 @@ Algoritmi toimii niin pitkään, kunnes **pino** on tyhjä, jolloin tiedämme et
 Algoritmi päätietorakenteina on käytössä **kaksiulotteinen taulukko**. Kaksiulotteisessa taulukokko on täytetty Cell olioilla, jotka pitävät sisällään solun  X, Y arvon, tiedon siitä onko siinä vielä käyty, sekä solun kaikki mahdolliset seinät.
 
 Algoritmin toiminta on suhteellisen yksinkertainen sillä valitsemme kaksi suuntaa johon katsoa, Algoritmissani katsotaan *TOP* ja *LEFT* seiniä. Algoritmi aloittaa *Gridin* vasemmasta yläkulmasta, ja poistaa satunnaisesti *TOP* seinän tai *LEFT* seinän, mutta koska kumpaakaan ei ole mahdollista tehdä, siirrtyään seuraavaan soluun. Algoritmi valitsee taas satunnaisesti *TOP* tai *LEFT* seinän väliltä, mutta koska *TOP* seinää ei voida poistaa, poistaa algoritmi tällöin *LEFT* seinän. Algoritmi etenee siis yläkulmasta sen vastakulmaan eli alakulmaan, ja tämä tapahtuu menemällä rivi ja solu kerrallaan, kunnes päästään loppuun, jolloin jokaiselle solulle tulee sama valinta eli poistaa satunnaisesti *TOP* tai *LEFT* seinä.
+
+### UI
+Tarkoituksena on toteuttaa tekstipohjainen sokkelo, jossa käytän **|** ja **_** merkintöjä.
