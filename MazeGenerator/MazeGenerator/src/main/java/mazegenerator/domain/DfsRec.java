@@ -86,6 +86,7 @@ public class DfsRec {
         neighbours = new ArrayList<Cell>();
         int x = current.getX();
         int y = current.getY();
+
         Cell cell = null;
 
         //Check current cell top neighbour
@@ -95,7 +96,6 @@ public class DfsRec {
         }
 
         //Check current cell right neighbour
-        // this need to be fixed
         if (x + 1 != rows && !grid[x + 1][y].getVisited()) {
 
             neighbours.add(grid[x + 1][y]);
@@ -115,7 +115,7 @@ public class DfsRec {
         // if there is over 0 neighbour choose one of them randomly.
         if (neighbours.size() > 0) {
             cell = neighbours.get(new Random().nextInt(neighbours.size()));
-            
+
         }
 
         return cell;

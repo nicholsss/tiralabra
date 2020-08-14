@@ -98,6 +98,15 @@ public class Cell {
         this.visited = true;
     }
 
+    public void setTop() {
+        this.top = false;
+
+    }
+
+    public void setLeft() {
+        this.left = false;
+    }
+
     /**
      * minus current cell x value, from next cell x value. Depending from
      * outcome we delete left and right wall, and vice-versa when we get -1.

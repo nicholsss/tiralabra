@@ -20,14 +20,21 @@ public class Main {
      */
     public static void main(String[] args) {
         List<Cell> grid = new ArrayList<Cell>();
-        int x = 6;
-        int y = 6;
+        int x = 2;
+        int y = 2;
 
-        System.out.println("main");
+        System.out.println("Dfs");
         long alku = System.nanoTime();
 
-        DfsRec maze = new DfsRec(x, y);
+        DfsRec dfs = new DfsRec(x, y);
         long loppu = System.nanoTime();
         System.out.println("Aikaa kului " + ((loppu - alku) / 1e9) + " s");
+
+        System.out.println("Binary");
+        long alku1 = System.nanoTime();
+
+        BinaryTree binary = new BinaryTree(x, y);
+        long loppu1 = System.nanoTime();
+        System.out.println("Aikaa kului " + ((loppu1 - alku1) / 1e9) + " s");
     }
 }
