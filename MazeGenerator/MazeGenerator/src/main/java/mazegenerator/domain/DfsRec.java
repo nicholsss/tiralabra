@@ -73,6 +73,27 @@ public class DfsRec {
             }
         }
 
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < this.cols; j++) {
+
+                if (grid[i][j].getTop() == true) {
+                    System.out.print("T");
+
+                }
+                if (grid[i][j].getRight() == true) {
+                    System.out.print("|");
+                }
+                if (grid[i][j].getBottom() == true) {
+                    System.out.print("-");
+                }
+                if (grid[i][j].getLeft() == true) {
+                    System.out.print("|");
+                }
+
+            }
+            System.out.println("");
+        }
+
     }
 
     /**

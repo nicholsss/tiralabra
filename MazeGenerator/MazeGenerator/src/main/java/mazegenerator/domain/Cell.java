@@ -107,6 +107,22 @@ public class Cell {
         this.left = false;
     }
 
+    public boolean getTop() {
+        return top;
+    }
+
+    public boolean getRight() {
+        return right;
+    }
+
+    public boolean getBottom() {
+        return bottom;
+    }
+
+    public boolean getLeft() {
+        return left;
+    }
+
     /**
      * minus current cell x value, from next cell x value. Depending from
      * outcome we delete left and right wall, and vice-versa when we get -1.
