@@ -5,7 +5,7 @@
  */
 package mazegenerator.domain;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 //import java.util.Stack;
@@ -104,7 +104,9 @@ public class DfsRec {
      * return null
      */
     private Cell checkValidNeighbours(Cell current) {
-        neighbours = new ArrayList<Cell>();
+        //neighbours = new ArrayList<Cell>();
+
+        ArrayList<Cell> neighbours = new ArrayList<>();
         int x = current.getX();
         int y = current.getY();
 
