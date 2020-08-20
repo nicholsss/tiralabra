@@ -131,23 +131,23 @@ public class Cell {
      * @param next
      */
     void removeWalls(Cell next) {
-        int x = this.x - next.x;
+        int y = this.y - next.y;
 
-        if (x == 1) {
+        if (y == 1) {
             this.left = false;
             next.right = false;
 
-        } else if (x == -1) {
+        } else if (y == -1) {
             this.right = false;
             next.left = false;
         }
 
-        int y = this.y - next.y;
+        int x = this.x - next.x;
 
-        if (y == 1) {
+        if (x == 1) {
             this.top = false;
             next.bottom = false;
-        } else if (y == -1) {
+        } else if (x == -1) {
             this.bottom = false;
             next.top = false;
         }
