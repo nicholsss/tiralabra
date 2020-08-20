@@ -42,6 +42,7 @@ public class ArrayListTest {
         assertEquals(1, list.size() == 1);
         
     }
+    
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

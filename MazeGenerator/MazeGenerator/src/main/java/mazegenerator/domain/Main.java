@@ -7,6 +7,7 @@ package mazegenerator.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import ui.Ui;
 
 /**
  *
@@ -22,7 +23,7 @@ public class Main {
         List<Cell> grid = new ArrayList<Cell>();
         int x = 3;
         int y = 3;
-
+        Ui i = new Ui();
         System.out.println("Dfs");
         long alku = System.nanoTime();
 

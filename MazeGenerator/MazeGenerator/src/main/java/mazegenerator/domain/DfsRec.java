@@ -168,4 +168,9 @@ public class DfsRec {
         return cell;
 
     }
+
+    public Cell[][] getGrid() {
+
+        return grid;
+    }
 }
