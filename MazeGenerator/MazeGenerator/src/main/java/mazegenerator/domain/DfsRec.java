@@ -111,6 +111,29 @@ public class DfsRec {
         int y = current.getY();
 
         Cell cell = null;
+        //top
+        if (x - 1 != -1 && !grid[x - 1][y].getVisited()) {
+
+            neighbours.add(grid[x - 1][y]);
+        }
+
+        //Check current cell right neighbour
+        if (y + 1 != cols && !grid[x][y + 1].getVisited()) {
+
+            neighbours.add(grid[x][y + 1]);
+
+        }
+        //Check current cell bottom neighbour
+        if (x + 1 != cols && !grid[x + 1][y].getVisited()) {
+
+            neighbours.add(grid[x + 1][y]);
+        }
+        //Check current cell left neighbour
+        if (y - 1 != -1 && !grid[x][y - 1].getVisited()) {
+
+            neighbours.add(grid[x][y - 1]);
+        }
+        /*
 
         //Check current cell top neighbour
         if (y - 1 != -1 && !grid[x][y - 1].getVisited()) {
@@ -134,6 +157,7 @@ public class DfsRec {
 
             neighbours.add(grid[x - 1][y]);
         }
+         */
 
         // if there is over 0 neighbour choose one of them randomly.
         if (neighbours.size() > 0) {
