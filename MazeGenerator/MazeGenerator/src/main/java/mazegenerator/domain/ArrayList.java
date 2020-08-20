@@ -46,4 +46,12 @@ public class ArrayList<T> {
         return list[k];
     }
 
+    public boolean isEmpty() {
+        boolean value = false;
+        if (count == 0) {
+            value = true;
+        }
+        return value;
+    }
+
 }

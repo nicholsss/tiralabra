@@ -20,8 +20,8 @@ public class Main {
      */
     public static void main(String[] args) {
         List<Cell> grid = new ArrayList<Cell>();
-        int x = 2;
-        int y = 2;
+        int x = 3;
+        int y = 3;
 
         System.out.println("Dfs");
         long alku = System.nanoTime();
