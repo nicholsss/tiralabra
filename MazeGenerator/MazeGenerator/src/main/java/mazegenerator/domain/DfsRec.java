@@ -8,6 +8,10 @@ package mazegenerator.domain;
 //import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 //import java.util.Stack;
 
 /**
@@ -20,6 +24,7 @@ public class DfsRec {
     List<Cell> neighbours;
     int rows;
     int cols;
+    int w = 40;
 
     /**
      *
@@ -72,7 +77,7 @@ public class DfsRec {
                 current = grid[next.getX()][next.getY()];
             }
         }
-
+        /*
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.cols; j++) {
 
@@ -93,7 +98,7 @@ public class DfsRec {
             }
             System.out.println("");
         }
-
+         */
     }
 
     /**
@@ -133,31 +138,6 @@ public class DfsRec {
 
             neighbours.add(grid[x][y - 1]);
         }
-        /*
-
-        //Check current cell top neighbour
-        if (y - 1 != -1 && !grid[x][y - 1].getVisited()) {
-
-            neighbours.add(grid[x][y - 1]);
-        }
-
-        //Check current cell right neighbour
-        if (x + 1 != rows && !grid[x + 1][y].getVisited()) {
-
-            neighbours.add(grid[x + 1][y]);
-
-        }
-        //Check current cell bottom neighbour
-        if (y + 1 != cols && !grid[x][y + 1].getVisited()) {
-
-            neighbours.add(grid[x][y + 1]);
-        }
-        //Check current cell left neighbour
-        if (x - 1 != -1 && !grid[x - 1][y].getVisited()) {
-
-            neighbours.add(grid[x - 1][y]);
-        }
-         */
 
         // if there is over 0 neighbour choose one of them randomly.
         if (neighbours.size() > 0) {
@@ -173,4 +153,37 @@ public class DfsRec {
 
         return grid;
     }
+
+    /**
+     * Draw ASCII maze
+     */
+    void display() {
+        for (int i = 0; i < cols; i++) {
+
+            for (int j = 0; j < rows; j++) {
+                if (grid[i][j].getTop() == true) {
+                    System.out.print("+---");
+                } else {
+                    System.out.print("+   ");
+                }
+
+            }
+            System.out.println("+");
+            for (int j = 0; j < rows; j++) {
+                if (grid[i][j].getLeft() == true) {
+                    System.out.print("|   ");
+                } else {
+                    System.out.print("    ");
+                }
+
+            }
+            System.out.println("|");
+
+        }
+        for (int j = 0; j < rows; j++) {
+            System.out.print("+---");
+        }
+        System.out.println("+");
+    }
+
 }

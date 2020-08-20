@@ -7,6 +7,10 @@ package mazegenerator.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import ui.Ui;
 
 /**
@@ -15,19 +19,42 @@ import ui.Ui;
  */
 public class Main {
 
+   /* @Override
+    public void start(Stage primaryStage) throws Exception {
+        Stage window = primaryStage;
+        GridPane mazeGrid = new GridPane();
+        Scene maze = new Scene(mazeGrid, 400, 400);
+        
+        window.setScene(maze);
+        window.show();
+        generate();
+    }
+    public void generate(){
+        int x = 3;
+        int y = 3;
+        DfsRec dfs = new DfsRec(x, y);
+        dfs.display();
+    }
+    */
+
     /**
      *
      * @param args ohjelman käynnistyminen
      */
+
     public static void main(String[] args) {
-        List<Cell> grid = new ArrayList<Cell>();
-        int x = 3;
-        int y = 3;
+   
+        
+        
+        
+        int x = 10;
+        int y = 10;
         Ui i = new Ui();
         System.out.println("Dfs");
         long alku = System.nanoTime();
 
         DfsRec dfs = new DfsRec(x, y);
+        dfs.display();
         long loppu = System.nanoTime();
         System.out.println("Aikaa kului " + ((loppu - alku) / 1e9) + " s");
 

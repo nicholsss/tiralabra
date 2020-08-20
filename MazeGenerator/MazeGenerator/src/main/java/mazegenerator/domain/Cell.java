@@ -33,6 +33,7 @@ public class Cell {
     private boolean right;
     private boolean bottom;
     private boolean left;
+    private int value;
 
     /**
      *
@@ -48,6 +49,7 @@ public class Cell {
         this.right = true;
         this.bottom = true;
         this.left = true;
+        this.value = 1;
     }
 
     /**
@@ -88,6 +90,12 @@ public class Cell {
      */
     public boolean getVisited() {
         return visited;
+    }
+    public void setValue(){
+        this.value = 0;
+    }
+    public int getValue(){
+        return this.value;
     }
 
     /**
