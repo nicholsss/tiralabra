@@ -56,7 +56,7 @@ public class DfsRec {
         //First cell where we start.
 
         Cell current = grid[0][0];
-        current.setVisitedt();
+        current.setVisited();
         stack.add(current);
 
         // keep going while there are cells in stack
@@ -67,7 +67,7 @@ public class DfsRec {
 
             // if we got an cell, mark is visited and add it to stack.
             if (next != null) {
-                next.setVisitedt();
+                next.setVisited();
                 stack.add(next);
                 current.removeWalls(next);
                 current = next;
@@ -77,28 +77,6 @@ public class DfsRec {
                 current = grid[next.getX()][next.getY()];
             }
         }
-        /*
-        for (int i = 0; i < this.rows; i++) {
-            for (int j = 0; j < this.cols; j++) {
-
-                if (grid[i][j].getTop() == true) {
-                    System.out.print("T");
-
-                }
-                if (grid[i][j].getRight() == true) {
-                    System.out.print("|");
-                }
-                if (grid[i][j].getBottom() == true) {
-                    System.out.print("-");
-                }
-                if (grid[i][j].getLeft() == true) {
-                    System.out.print("|");
-                }
-
-            }
-            System.out.println("");
-        }
-         */
     }
 
     /**
@@ -157,7 +135,8 @@ public class DfsRec {
     /**
      * Draw ASCII maze
      */
-    void display() {
+    // cols == y
+    void draw() {
         for (int i = 0; i < cols; i++) {
 
             for (int j = 0; j < rows; j++) {

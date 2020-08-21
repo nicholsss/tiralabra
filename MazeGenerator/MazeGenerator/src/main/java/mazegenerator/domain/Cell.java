@@ -49,7 +49,7 @@ public class Cell {
         this.right = true;
         this.bottom = true;
         this.left = true;
-        this.value = 1;
+        
     }
 
     /**
@@ -91,10 +91,12 @@ public class Cell {
     public boolean getVisited() {
         return visited;
     }
-    public void setValue(){
+
+    public void setValue() {
         this.value = 0;
     }
-    public int getValue(){
+
+    public int getValue() {
         return this.value;
     }
 
@@ -102,7 +104,7 @@ public class Cell {
      * Change visited Boolean to true
      *
      */
-    public void setVisitedt() {
+    public void setVisited() {
         this.visited = true;
     }
 
@@ -111,8 +113,16 @@ public class Cell {
 
     }
 
+    public void setRight() {
+        this.right = false;
+    }
+
     public void setLeft() {
         this.left = false;
+    }
+
+    public void setBottom() {
+        this.bottom = false;
     }
 
     public boolean getTop() {

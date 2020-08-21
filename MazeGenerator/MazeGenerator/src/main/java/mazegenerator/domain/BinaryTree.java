@@ -40,53 +40,85 @@ public class BinaryTree {
     }
 
     /**
-     * Start checking from cell [0][0] its neighbours
+     * Start checking from cell [0][0] its neighbors
      */
     private void GenerateMaze() {
 
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.cols; j++) {
                 CheckNeighbour(grid[i][j]);
+
             }
         }
     }
 
     /**
-     * Check randomly TOP or LEFT neighbours of cell
-     * Fix needed: when if left side is no go, it should go up.
-     * @param current cell which neighbours we check
+     * Check randomly TOP or LEFT neighbors of cell Fix needed: when if left
+     * side is no go, it should go up.
+     *
+     * @param current cell which neighbors we check
      */
     private void CheckNeighbour(Cell current) {
         Random r = new Random();
-        int Randvalue = r.nextInt(2);
-        // 0 is NORTH and 1 is WEST
+        int RandomWay = r.nextInt(2);
         int row = current.getX();
         int col = current.getY();
-        boolean check = false;
-        // if Randvalue is 0 We check cell top
-        if (Randvalue == 0) {
+        ArrayList<Cell> neighbours = new ArrayList<>();
+
+        //Check top neighbour
+        if (RandomWay == 1) {
+
             if (row - 1 != -1) {
-                current.setTop();
-                check = true;
-            }
-            // if we cannot go top, we check if we can go left
-            if (check == false) {
-                Randvalue = 1;
 
-            }
-            // if Randvalue is 1 we check 
-        }
-        if (Randvalue == 1) {
-            
-            if (col - 1 != -1) {
+                current.setTop();
+                grid[row - 1][col].setBottom();
+                // this else if needs abit tweaking.
+            } else if (col - 1 != -1) {
                 current.setLeft();
-                
+                grid[row][col - 1].setRight();
             }
-            // if left is out of reach, open top wall.
-            if (check == false) {
+        }
+        //Check left neighbour
+        if (RandomWay == 0) {
+            if (col - 1 != -1) {
+
+                current.setLeft();
+                grid[row][col - 1].setRight();
+                // this else if need a bit tweaking.
+            } else if (row - 1 != -1) {
                 current.setTop();
+                grid[row - 1][col].setBottom();
             }
+        }
+
+    }
+
+    void draw() {
+        for (int i = 0; i < cols; i++) {
+
+            for (int j = 0; j < rows; j++) {
+                if (grid[i][j].getTop() == true) {
+                    System.out.print("+---");
+                } else {
+                    System.out.print("+   ");
+                }
+
+            }
+            System.out.println("+");
+            for (int j = 0; j < rows; j++) {
+                if (grid[i][j].getLeft() == true) {
+                    System.out.print("|   ");
+                } else {
+                    System.out.print("    ");
+                }
+
+            }
+            System.out.println("|");
 
         }
+        for (int j = 0; j < rows; j++) {
+            System.out.print("+---");
+        }
+        System.out.println("+");
     }
 }
