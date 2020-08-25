@@ -5,14 +5,11 @@
  */
 package mazegenerator.domain;
 
-//import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-//import java.util.Stack;
+import util.ArrayList;
+import util.Stack;
+
 
 /**
  *
@@ -136,7 +133,7 @@ public class DfsRec {
      * Draw ASCII maze
      */
     // cols == y
-    void draw() {
+    public void draw() {
         for (int i = 0; i < cols; i++) {
 
             for (int j = 0; j < rows; j++) {

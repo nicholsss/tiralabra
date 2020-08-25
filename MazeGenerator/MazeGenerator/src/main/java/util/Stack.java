@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mazegenerator.domain;
+package util;
+
+import mazegenerator.domain.Cell;
 
 /**
  *
- * @author Nicholas
+ * @author nicholas
  */
 public class Stack {
 
@@ -60,3 +62,4 @@ public class Stack {
     }
 
 }
+

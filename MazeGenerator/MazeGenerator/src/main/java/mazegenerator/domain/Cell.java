@@ -5,10 +5,6 @@
  */
 package mazegenerator.domain;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -49,7 +45,7 @@ public class Cell {
         this.right = true;
         this.bottom = true;
         this.left = true;
-        
+
     }
 
     /**
@@ -60,28 +56,8 @@ public class Cell {
         return x;
     }
 
-    /**
-     *
-     * @param change value of x
-     */
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    /**
-     *
-     * @return cell value y
-     */
     public int getY() {
         return y;
-    }
-
-    /**
-     *
-     * @param change value of y
-     */
-    public void setY(int y) {
-        this.y = y;
     }
 
     /**
@@ -149,23 +125,23 @@ public class Cell {
      * @param next
      */
     void removeWalls(Cell next) {
-        int y = this.y - next.y;
+        int col = this.y - next.y;
 
-        if (y == 1) {
+        if (col == 1) {
             this.left = false;
             next.right = false;
 
-        } else if (y == -1) {
+        } else if (col == -1) {
             this.right = false;
             next.left = false;
         }
 
-        int x = this.x - next.x;
+        int row = this.x - next.x;
 
-        if (x == 1) {
+        if (row == 1) {
             this.top = false;
             next.bottom = false;
-        } else if (x == -1) {
+        } else if (row == -1) {
             this.bottom = false;
             next.top = false;
         }

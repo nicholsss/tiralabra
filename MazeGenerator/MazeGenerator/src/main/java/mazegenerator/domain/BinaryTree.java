@@ -6,6 +6,7 @@
 package mazegenerator.domain;
 
 import java.util.Random;
+import util.ArrayList;
 
 /**
  *
@@ -93,7 +94,7 @@ public class BinaryTree {
 
     }
 
-    void draw() {
+    public void draw() {
         for (int i = 0; i < cols; i++) {
 
             for (int j = 0; j < rows; j++) {
