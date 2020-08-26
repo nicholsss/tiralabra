@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+package util;
 
 import mazegenerator.domain.Cell;
 import org.junit.After;
@@ -19,31 +19,33 @@ import util.ArrayList;
  * @author nicholas
  */
 public class ArrayListTest {
-    
-    private ArrayList list;
-    
+
     public ArrayListTest() {
-        
+
     }
-    
-    @Before
-    public void setUp() {
-        
-        ArrayList<Cell> list = new ArrayList<Cell>();
-    }
-    
+
     @Test
-    public void ListIsEmpty() {
+    public void testListIsEmpty() {
+        ArrayList<Cell> list = new ArrayList<Cell>();
         assertTrue(list.isEmpty());
     }
-    
+
     @Test
-    public void ListNotEmpty() {
+    public void testListNotEmpty() {
+        ArrayList<Cell> list = new ArrayList<Cell>();
         list.add(new Cell(1, 2));
-        assertEquals(1, list.size() == 1);
-        
+        assertEquals(1, list.size());
+
     }
-    
+
+    @Test
+    public void testListContainsMultipleCell() {
+        ArrayList<Cell> list = new ArrayList<Cell>();
+        for (int i = 0; i < 10; i++) {
+            list.add(new Cell(i, 1));
+        }
+        assertEquals(10, list.size());
+    }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

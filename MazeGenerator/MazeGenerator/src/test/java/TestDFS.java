@@ -29,6 +29,16 @@ public class TestDFS {
 
     }
 
+    public void testNewMaze() {
+        int x = 8;
+        int y = 8;
+        DfsRec dfs = new DfsRec(x, y);
+        
+        dfs.GenerateMaze();
+        
+        
+    }
+
     /**
      * Testing that grid is not empty
      */
@@ -47,7 +57,15 @@ public class TestDFS {
         int x = 4;
         int y = 4;
         Cell cell = new Cell(x, y);
-        DfsRec dfs = new DfsRec(x, y);
+
+        assertEquals("Cell must be unvisited", cell.getVisited(), false);
+
+    }
+     @Test
+    public void testGridContainsCell() {
+        int x = 4;
+        int y = 4;
+        Cell cell = new Cell(x, y);
 
         assertEquals("Cell must be unvisited", cell.getVisited(), false);
 

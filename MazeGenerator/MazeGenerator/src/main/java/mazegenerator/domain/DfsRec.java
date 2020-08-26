@@ -10,7 +10,6 @@ import java.util.Random;
 import util.ArrayList;
 import util.Stack;
 
-
 /**
  *
  * @author Nicholas
@@ -48,7 +47,7 @@ public class DfsRec {
      *
      */
     public void GenerateMaze() {
-        //Stack<Cell> stack = new Stack<Cell>();
+        // we give stack size rows*cols so it's big enought. 
         Stack stack = new Stack(this.rows * this.cols);
         //First cell where we start.
 
