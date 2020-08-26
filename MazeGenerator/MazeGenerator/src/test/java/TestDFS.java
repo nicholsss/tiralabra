@@ -52,8 +52,8 @@ public class TestDFS {
      */
     @Test
     public void testGridIsNotEmpty() {
-        int x = 0;
-        int y = 0;
+        int x = 8;
+        int y = 8;
 
         DfsRec dfs = new DfsRec(x, y);
 
