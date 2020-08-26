@@ -82,7 +82,7 @@ public class DfsRec {
      * @return a random neighbor from our list if it has neighbors, if not
      * return null
      */
-    private Cell checkValidNeighbours(Cell current) {
+    public Cell checkValidNeighbours(Cell current) {
         //neighbours = new ArrayList<Cell>();
 
         ArrayList<Cell> neighbours = new ArrayList<>();
@@ -126,6 +126,11 @@ public class DfsRec {
     public Cell[][] getGrid() {
 
         return grid;
+    }
+
+    public Cell getCellFromGrid(int x, int y) {
+
+        return grid[x][y];
     }
 
     /**
