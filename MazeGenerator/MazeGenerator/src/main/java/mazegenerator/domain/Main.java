@@ -22,8 +22,12 @@ public class Main {
      * @param args Starting
      */
     public static void main(String[] args) {
-        Ui ui = new Ui();
-        ui.start();
-        
+
+        HuntnKill k;
+        k = new HuntnKill(6, 6);
+        k.draw();
+        //Ui ui = new Ui();
+        //ui.start();
+
     }
 }
