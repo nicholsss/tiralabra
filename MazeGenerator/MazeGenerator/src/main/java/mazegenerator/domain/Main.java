@@ -23,11 +23,9 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        HuntnKill k;
-        k = new HuntnKill(6, 6);
-        k.draw();
-        //Ui ui = new Ui();
-        //ui.start();
+      
+        Ui ui = new Ui();
+        ui.start();
 
     }
 }
