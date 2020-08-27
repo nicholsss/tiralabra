@@ -23,9 +23,12 @@ public class Main {
      */
     public static void main(String[] args) {
 
-      
-        Ui ui = new Ui();
-        ui.start();
+        int x = 100;
+        int y = 100;
+        HuntnKill k= new HuntnKill(x, y);
+        k.draw();
+        //Ui ui = new Ui();
+        //ui.start();
 
     }
 }

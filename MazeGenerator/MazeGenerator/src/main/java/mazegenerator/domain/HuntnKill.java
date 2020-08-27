@@ -17,7 +17,7 @@ public class HuntnKill {
 
     private Cell[][] grid;
     List<Cell> neighbours;
-    List<Cell> naapuri;
+    List<Cell> visitedNeighbour;
     int rows;
     int cols;
 
@@ -60,9 +60,13 @@ public class HuntnKill {
                         if (grid[i][j].getVisited() == false) {
                             current = grid[i][j];
                             current.setVisited();
-                            Cell prev = checkNeighbour(current);
 
-                            prev.removeWalls(current);
+                            Cell prev = checkNeighbour(current);
+                            if (prev != null) {
+                                prev.removeWalls(current);
+                            }
+
+                            //This breaks algorithm if x, y too big.
                             break loop;
                         }
 
@@ -74,33 +78,32 @@ public class HuntnKill {
     }
 
     private Cell checkValidNeighbours(Cell current) {
-        neighbours = new ArrayList<Cell>();
+        neighbours = new ArrayList<>();
         int x = current.getX();
         int y = current.getY();
 
         Cell cell = null;
-
-        //Check current cell top neighbour
-        if (y - 1 != -1 && !grid[x][y - 1].getVisited()) {
-
-            neighbours.add(grid[x][y - 1]);
-        }
-
-        //Check current cell right neighbour
-        if (x + 1 != rows && !grid[x + 1][y].getVisited()) {
-
-            neighbours.add(grid[x + 1][y]);
-
-        }
-        //Check current cell bottom neighbour
-        if (y + 1 != cols && !grid[x][y + 1].getVisited()) {
-
-            neighbours.add(grid[x][y + 1]);
-        }
-        //Check current cell left neighbour
+        //top
         if (x - 1 != -1 && !grid[x - 1][y].getVisited()) {
 
             neighbours.add(grid[x - 1][y]);
+        }
+
+        //Check current cell right neighbour
+        if (y + 1 != cols && !grid[x][y + 1].getVisited()) {
+
+            neighbours.add(grid[x][y + 1]);
+
+        }
+        //Check current cell bottom neighbour
+        if (x + 1 != cols && !grid[x + 1][y].getVisited()) {
+
+            neighbours.add(grid[x + 1][y]);
+        }
+        //Check current cell left neighbour
+        if (y - 1 != -1 && !grid[x][y - 1].getVisited()) {
+
+            neighbours.add(grid[x][y - 1]);
         }
 
         // if there is over 0 neighbour choose one of them randomly.
@@ -113,39 +116,46 @@ public class HuntnKill {
 
     }
 
+    /**
+     * Check current cell all visited neighbors so walls can be removed from
+     * visited cell and current cell.
+     *
+     * @param current unvisited cell from grid
+     * @return cell which is next to current cell
+     */
     private Cell checkNeighbour(Cell current) {
-        naapuri = new ArrayList<Cell>();
+        visitedNeighbour = new ArrayList<Cell>();
 
         int x = current.getX();
         int y = current.getY();
 
         Cell cell = null;
 
-        if (y - 1 != -1 && grid[x][y - 1].getVisited()) {
+        if (x - 1 != -1 && grid[x - 1][y].getVisited()) {
 
-            naapuri.add(grid[x][y - 1]);
+            visitedNeighbour.add(grid[x - 1][y]);
         }
 
         //Check current cell right neighbour
-        if (x + 1 != rows && grid[x + 1][y].getVisited()) {
+        if (y + 1 != rows && grid[x][y + 1].getVisited()) {
 
-            naapuri.add(grid[x + 1][y]);
+            visitedNeighbour.add(grid[x][y + 1]);
 
         }
         //Check current cell bottom neighbour
-        if (y + 1 != cols && grid[x][y + 1].getVisited()) {
+        if (x + 1 != cols && grid[x + 1][y].getVisited()) {
 
-            naapuri.add(grid[x][y + 1]);
+            visitedNeighbour.add(grid[x + 1][y]);
         }
         //Check current cell left neighbour
-        if (x - 1 != -1 && grid[x - 1][y].getVisited()) {
+        if (y - 1 != -1 && grid[x][y - 1].getVisited()) {
 
-            naapuri.add(grid[x - 1][y]);
+            visitedNeighbour.add(grid[x][y - 1]);
         }
 
         // if there is over 0 neighbour choose one of them randomly.
-        if (naapuri.size() > 0) {
-            cell = naapuri.get(new Random().nextInt(naapuri.size()));
+        if (visitedNeighbour.size() > 0) {
+            cell = visitedNeighbour.get(new Random().nextInt(visitedNeighbour.size()));
 
         }
 
