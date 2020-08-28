@@ -19,5 +19,12 @@ Algoritmi päätietorakenteina on käytössä **kaksiulotteinen taulukko**. Kaks
 
 Algoritmin toiminta on suhteellisen yksinkertainen sillä valitsemme kaksi suuntaa johon katsoa, Algoritmissani katsotaan *TOP* ja *LEFT* seiniä. Algoritmi aloittaa *Gridin* vasemmasta yläkulmasta, ja poistaa satunnaisesti *TOP* seinän tai *LEFT* seinän, mutta koska kumpaakaan ei ole mahdollista tehdä, siirrtyään seuraavaan soluun. Algoritmi valitsee taas satunnaisesti *TOP* tai *LEFT* seinän väliltä, mutta koska *TOP* seinää ei voida poistaa, poistaa algoritmi tällöin *LEFT* seinän. Algoritmi etenee siis yläkulmasta sen vastakulmaan eli alakulmaan, ja tämä tapahtuu menemällä rivi ja solu kerrallaan, kunnes päästään loppuun, jolloin jokaiselle solulle tulee sama valinta eli poistaa satunnaisesti *TOP* tai *LEFT* seinä.
 
+### Hunt And Kill
+Algoritmin Päätietorakenteina on käytössä  **kaksiulotteinen taulukko** ja **Lista**. Kaksiulotteinen taulukko pitää sisällään Cell objektin, joka pitää sisällään solun tiedot.
+
+Hunt And Kill algoritmin perustuu siihen, että aloitetaan satunnaisesta kohdasta, ja katsotaan viereiset naapurit ja siirrytään naapuri soluun. Tätä jatketaan niin kauan kunnes ei pystytä. Kun ei ole enää naapureita, niin aloitamme etsimään käymätöntä solua ekalta riviltä, jonka jälkeen otamme käymättömän solun, ja jatkamme siitä viereisten solujen etsimistä joissa ei olla käyty.
+
 ### UI
-Tarkoituksena on toteuttaa tekstipohjainen sokkelo, jossa käytän **|** ja **_** merkintöjä.
+Tarkoituksena on toteuttaa tekstipohjainen sokkelo, jossa käytän **+** **|** ja **_** merkintöjä.
+
+
