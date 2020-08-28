@@ -24,6 +24,11 @@ Algoritmin Päätietorakenteina on käytössä  **kaksiulotteinen taulukko** ja 
 
 Hunt And Kill algoritmin perustuu siihen, että aloitetaan satunnaisesta kohdasta, ja katsotaan viereiset naapurit ja siirrytään naapuri soluun. Tätä jatketaan niin kauan kunnes ei pystytä. Kun ei ole enää naapureita, niin aloitamme etsimään käymätöntä solua ekalta riviltä, jonka jälkeen otamme käymättömän solun, ja jatkamme siitä viereisten solujen etsimistä joissa ei olla käyty.
 
+### Aldour-Bolder
+Algoritmin Päätietorakenteina on käytössä  **kaksiulotteinen taulukko** ja **Lista**. Kaksiulotteinen taulukko pitää sisällään Cell objektin, joka pitää sisällään solun tiedot.
+Listassa sälilytämme solun naapureita.
+Aldour - Bolder algoritmi on hitain tekemistäni algoritmeista, sillä se aloittaa satunnaisesta paikasta, jonka jälkeen se valitsee yhden naapureistaan satunnaisesti, ja poistetaan näiden solujen väliltä seinä. Tämän jälkeen solu joka oli naapuri on meidän "current" solu, ja valitsemme sille satunnaisen naapurin, ja jos naapurissa ei olla käyty, niin poistetaan seinämät taas. Jos solussa on käyty, niin siirrymme vain kyseiseen soluun. Tätä jatkuu kunnes olemme käyneet kaikki solut, tämä voidaan tehdä esimerkiksi jonkinmuotoisella laskurilla.
+
 ### UI
 Tarkoituksena on toteuttaa tekstipohjainen sokkelo, jossa käytän **+** **|** ja **_** merkintöjä.
 
