@@ -5,16 +5,15 @@
  */
 package mazegenerator.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import util.ArrayList;
-import util.Stack;
 
 /**
  *
- * @author Nicholas
+ * @author nicholas
  */
-public class DfsRec {
+public class AldousBroder {
 
     private Cell[][] grid;
     List<Cell> neighbours;
@@ -26,7 +25,7 @@ public class DfsRec {
      * @param rows amount of rows for grid
      * @param cols amount of cols for grid
      */
-    public DfsRec(int rows, int cols) {
+    public AldousBroder(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
 
@@ -41,73 +40,53 @@ public class DfsRec {
 
     }
 
-    /**
-     * Here is our recursive method which checks our cell if it has neighbors.
-     *
-     */
-    public void GenerateMaze() {
-        // we give stack size rows*cols so it's big enought. 
-        Stack stack = new Stack(this.rows * this.cols);
-        //First cell where we start.
-
-        Cell current = grid[0][0];
+    private void GenerateMaze() {
+        long rx = System.nanoTime() % this.rows;
+        long ry = System.nanoTime() % this.cols;
+        int done = this.cols * this.rows;
+        int counter = 1;
+        Cell current = grid[(int) rx][(int) ry];
         current.setVisited();
-        stack.add(current);
+        while (counter != done) {
+            Cell next = checkNeighbour(current);
 
-        // keep going while there are cells in stack
-        while (!stack.isEmpty()) {
-
-            // check current cell neighbours
-            Cell next = checkValidNeighbours(current);
-
-            // if we got an cell, mark is visited and add it to stack.
-            if (next != null) {
+            if (next.getVisited() == false) {
                 next.setVisited();
-                stack.add(next);
                 current.removeWalls(next);
-                current = next;
-                // if we didnt get cell with neighbours take cell from top of our stack.
-            } else {
-                next = stack.pop();
-                current = grid[next.getX()][next.getY()];
+                counter++;
             }
+            current = next;
+
         }
+
     }
 
-    /**
-     * Check if cell neighbors is in grid, and that it's not visited
-     *
-     * @param current current cell, which neighbors we need to check.
-     * @return a random neighbor from our list if it has neighbors, if not
-     * return null
-     */
-    public Cell checkValidNeighbours(Cell current) {
-        //neighbours = new ArrayList<Cell>();
+    private Cell checkNeighbour(Cell current) {
+        neighbours = new ArrayList<Cell>();
 
-        ArrayList<Cell> neighbours = new ArrayList<>();
         int x = current.getX();
         int y = current.getY();
 
         Cell cell = null;
-        //top
-        if (x - 1 != -1 && !grid[x - 1][y].getVisited()) {
+
+        if (x - 1 != -1) {
 
             neighbours.add(grid[x - 1][y]);
         }
 
         //Check current cell right neighbour
-        if (y + 1 != cols && !grid[x][y + 1].getVisited()) {
+        if (y + 1 != rows) {
 
             neighbours.add(grid[x][y + 1]);
 
         }
         //Check current cell bottom neighbour
-        if (x + 1 != cols && !grid[x + 1][y].getVisited()) {
+        if (x + 1 != cols) {
 
             neighbours.add(grid[x + 1][y]);
         }
         //Check current cell left neighbour
-        if (y - 1 != -1 && !grid[x][y - 1].getVisited()) {
+        if (y - 1 != -1) {
 
             neighbours.add(grid[x][y - 1]);
         }
@@ -119,30 +98,15 @@ public class DfsRec {
         }
 
         return cell;
-
     }
 
-    public Cell[][] getGrid() {
-
-        return grid;
-    }
-
-    public Cell getCellFromGrid(int x, int y) {
-
-        return grid[x][y];
-    }
-
-    /**
-     * Draw ASCII maze
-     */
-    // cols == y
     public void draw() {
         for (int i = 0; i < cols; i++) {
 
             for (int j = 0; j < rows; j++) {
-               
+
                 if (grid[i][j].getTop() == true) {
-                    
+
                     System.out.print("+---");
                 } else {
                     System.out.print("+   ");
