@@ -2,9 +2,8 @@
 
 # Dokumentaatio
 * [Määrittelydokumentti](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/maarittelydokumentti.md)
-* [Testausdokumentti](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/Toteutusdokumentti.md)
-* [Toteutusdokumentti](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/Testausdokumentti.md)
-
+* [Testausdokumentti](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/Testausdokumentti.md)
+* [Toteutusdokumentti](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/Toteutusdokumentti.md)
 ## Viikkoraportit
 * [Viikko 1](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/viikkoraportti1.md)
 * [Viikko 2](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/Viikkoraportti2.md)
