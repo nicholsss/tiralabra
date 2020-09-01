@@ -28,7 +28,7 @@ public class DfsTest {
         int x = 8;
         int y = 8;
         DfsRec dfs = new DfsRec(x, y);
-
+        dfs.generateMaze();
         Cell k[][] = dfs.getGrid();
         assertNotNull(k[0][0]);
 

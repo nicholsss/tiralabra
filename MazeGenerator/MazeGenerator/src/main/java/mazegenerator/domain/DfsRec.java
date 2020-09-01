@@ -37,7 +37,7 @@ public class DfsRec {
                 grid[i][j] = new Cell(i, j);
             }
         }
-        GenerateMaze();
+      
 
     }
 
@@ -45,7 +45,7 @@ public class DfsRec {
      * Here is our recursive method which checks our cell if it has neighbors.
      *
      */
-    public void GenerateMaze() {
+    public void generateMaze() {
         // we give stack size rows*cols so it's big enought. 
         Stack stack = new Stack(this.rows * this.cols);
         //First cell where we start.

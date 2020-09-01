@@ -36,11 +36,10 @@ public class AldousBroder {
                 grid[i][j] = new Cell(i, j);
             }
         }
-        GenerateMaze();
 
     }
 
-    private void GenerateMaze() {
+    public void generateMaze() {
         long rx = System.nanoTime() % this.rows;
         long ry = System.nanoTime() % this.cols;
         int done = this.cols * this.rows;
@@ -61,7 +60,7 @@ public class AldousBroder {
 
     }
 
-    private Cell checkNeighbour(Cell current) {
+    public Cell checkNeighbour(Cell current) {
         neighbours = new ArrayList<Cell>();
 
         int x = current.getX();

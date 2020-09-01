@@ -33,11 +33,10 @@ public class HuntnKill {
                 grid[i][j] = new Cell(i, j);
             }
         }
-        GenerateMaze();
 
     }
 
-    private void GenerateMaze() {
+    public void generateMaze() {
         Random ran = new Random();
         long rx = System.nanoTime() % this.rows;
         long ry = System.nanoTime() % this.cols;

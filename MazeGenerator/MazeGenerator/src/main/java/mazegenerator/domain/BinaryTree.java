@@ -36,18 +36,18 @@ public class BinaryTree {
                 grid[i][j] = new Cell(i, j);
             }
         }
-        GenerateMaze();
+        
 
     }
 
     /**
      * Start checking from cell [0][0] its neighbors
      */
-    private void GenerateMaze() {
+    public void generateMaze() {
 
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.cols; j++) {
-                CheckNeighbour(grid[i][j]);
+                checkNeighbour(grid[i][j]);
 
             }
         }
@@ -59,7 +59,7 @@ public class BinaryTree {
      *
      * @param current cell which neighbors we check
      */
-    private void CheckNeighbour(Cell current) {
+    private void checkNeighbour(Cell current) {
         Random r = new Random();
         //int RandomWay = r.nextInt(2);
         long randomWay = System.nanoTime() % 2;

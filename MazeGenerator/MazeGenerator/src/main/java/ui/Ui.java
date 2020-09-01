@@ -47,7 +47,7 @@ public class Ui {
                     System.out.println("*************************");
                     System.out.println("* Recursive Backtracker *");
                     System.out.println("*************************");
-
+                    dfs.generateMaze();
                     long loppu = System.nanoTime();
                     dfs.draw();
                     System.out.println("Time spent to build Recursive backtracker Maze " + ((loppu - alku) / 1e9) + " s");
@@ -62,7 +62,7 @@ public class Ui {
                     long alku1 = System.nanoTime();
 
                     BinaryTree binary = new BinaryTree(x, y);
-
+                    binary.generateMaze();
                     long loppu1 = System.nanoTime();
                     binary.draw();
                     System.out.println("Time spent to build Binary Tree Maze " + ((loppu1 - alku1) / 1e9) + " s");
@@ -75,7 +75,7 @@ public class Ui {
                     System.out.println("*************************");
                     System.out.println("*      Hunt And Kill    *");
                     System.out.println("*************************");
-
+                    hnk.generateMaze();
                     long loppu = System.nanoTime();
                     hnk.draw();
                     System.out.println("Time spent to build Hunt And Kill Maze " + ((loppu - alku) / 1e9) + " s");
@@ -89,8 +89,9 @@ public class Ui {
                     System.out.println("*************************");
                     System.out.println("*     Aldrous-Broder    *");
                     System.out.println("*************************");
-
+                    ab.generateMaze();
                     long loppu = System.nanoTime();
+
                     ab.draw();
                     System.out.println("Time spent to build Aldous-Broder Maze " + ((loppu - alku) / 1e9) + " s");
 
@@ -105,6 +106,7 @@ public class Ui {
                     System.out.println("*************************");
                     long alku = System.nanoTime();
                     DfsRec dfs = new DfsRec(x, y);
+                    dfs.generateMaze();
                     long loppu = System.nanoTime();
                     dfs.draw();
 
@@ -114,6 +116,7 @@ public class Ui {
                     System.out.println("********************");
                     long alku1 = System.nanoTime();
                     BinaryTree binary = new BinaryTree(x, y);
+                    binary.generateMaze();
                     long loppu1 = System.nanoTime();
                     binary.draw();
 
@@ -123,6 +126,7 @@ public class Ui {
                     System.out.println("*************************");
                     long alku2 = System.nanoTime();
                     HuntnKill hnk = new HuntnKill(x, y);
+                    hnk.generateMaze();
                     long loppu2 = System.nanoTime();
                     hnk.draw();
 
@@ -132,6 +136,7 @@ public class Ui {
                     System.out.println("*************************");
                     long alku3 = System.nanoTime();
                     AldousBroder ab = new AldousBroder(x, y);
+                    ab.generateMaze();
                     long loppu3 = System.nanoTime();
                     ab.draw();
 
@@ -149,24 +154,28 @@ public class Ui {
                     for (int i = 0; i < 10; i++) {
                         long alku = System.nanoTime();
                         DfsRec dfs = new DfsRec(x, y);
+                        dfs.generateMaze();
                         long loppu = System.nanoTime();
                         dfsTotal += (loppu - alku);
                     }
                     for (int i = 0; i < 10; i++) {
                         long alku = System.nanoTime();
                         BinaryTree bt = new BinaryTree(x, y);
+                        bt.generateMaze();
                         long loppu = System.nanoTime();
                         btTotal += (loppu - alku);
                     }
                     for (int i = 0; i < 10; i++) {
                         long alku = System.nanoTime();
                         HuntnKill hnk = new HuntnKill(x, y);
+                        hnk.generateMaze();
                         long loppu = System.nanoTime();
                         hnkTotal += (loppu - alku);
                     }
                     for (int i = 0; i < 10; i++) {
                         long alku = System.nanoTime();
                         AldousBroder ab = new AldousBroder(x, y);
+                        ab.generateMaze();
                         long loppu = System.nanoTime();
                         abTotal += (loppu - alku);
                     }
