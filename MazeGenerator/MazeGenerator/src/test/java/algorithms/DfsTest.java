@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package algorithms;
+
 import mazegenerator.domain.Cell;
 import mazegenerator.domain.DfsRec;
 import org.junit.After;
@@ -14,51 +16,31 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Nicholas
+ * @author nicholas
  */
-public class TestDFS {
+public class DfsTest {
 
-    /**
-     * Test
-     */
-    public TestDFS() {
-
+    public DfsTest() {
     }
 
-    public void testNewMaze() {
+    @Test
+    public void mazeContainCellTest() {
         int x = 8;
         int y = 8;
         DfsRec dfs = new DfsRec(x, y);
 
-        dfs.GenerateMaze();
+        Cell k[][] = dfs.getGrid();
+        assertNotNull(k[0][0]);
 
     }
 
-    /**
-     * Testing that Cells are not visited
-     */
     @Test
-    public void testCellNotVisited() {
-        int x = 4;
-        int y = 4;
-        Cell cell = new Cell(x, y);
-
-        assertEquals(cell.getVisited(), false);
-
-    }
-
-    /**
-     * Testing that grid is not empty
-     */
-    @Test
-    public void testGridIsNotEmpty() {
+    public void mazeNotEmptyTest() {
         int x = 8;
         int y = 8;
-
         DfsRec dfs = new DfsRec(x, y);
 
         assertNotNull(dfs);
 
     }
-
 }

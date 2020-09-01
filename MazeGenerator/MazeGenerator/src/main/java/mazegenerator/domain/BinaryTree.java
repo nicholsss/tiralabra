@@ -61,13 +61,14 @@ public class BinaryTree {
      */
     private void CheckNeighbour(Cell current) {
         Random r = new Random();
-        int RandomWay = r.nextInt(2);
+        //int RandomWay = r.nextInt(2);
+        long randomWay = System.nanoTime() % 2;
         int row = current.getX();
         int col = current.getY();
         ArrayList<Cell> neighbours = new ArrayList<>();
 
         //Check top neighbour
-        if (RandomWay == 1) {
+        if (randomWay == 1) {
 
             if (row - 1 != -1) {
 
@@ -80,7 +81,7 @@ public class BinaryTree {
             }
         }
         //Check left neighbour
-        if (RandomWay == 0) {
+        if (randomWay == 0) {
             if (col - 1 != -1) {
 
                 current.setLeft();

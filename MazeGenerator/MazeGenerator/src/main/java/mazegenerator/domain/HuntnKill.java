@@ -39,20 +39,28 @@ public class HuntnKill {
 
     private void GenerateMaze() {
         Random ran = new Random();
-
-        int rx = ran.nextInt(this.rows);
-        int ry = ran.nextInt(this.cols);
-        Cell current = grid[rx][ry];
+        long rx = System.nanoTime() % this.rows;
+        long ry = System.nanoTime() % this.cols;
+        Cell current = grid[(int) rx][(int) ry];
 
         current.setVisited();
         while (current != null) {
 
             Cell next = checkValidNeighbours(current);
+
+            // if cell is not null, visit it, and remove walls between current
+            // and next cell
             if (next != null) {
                 next.setVisited();
                 current.removeWalls(next);
                 current = next;
+
             } else {
+
+                // if cell doesnt have neighbour, start looking unvisited cell from
+                // top row to bottom row until found unvisited cell.
+                // When cell found visit it, and remove walls between found cell
+                // and already visited cell
                 loop:
                 for (int i = 0; i < this.rows; i++) {
                     for (int j = 0; j < this.cols; j++) {
@@ -164,20 +172,25 @@ public class HuntnKill {
     }
 
     public void draw() {
-        for (int i = 0; i < cols; i++) {
+        //go row by row
+        for (int i = 0; i < rows; i++) {
 
-            for (int j = 0; j < rows; j++) {
+            for (int j = 0; j < cols; j++) {
 
+                // if cell has top wall draw it
                 if (grid[i][j].getTop() == true) {
 
                     System.out.print("+---");
+                    // if cell doesn't have top wall skip it
                 } else {
                     System.out.print("+   ");
                 }
 
             }
+
             System.out.println("+");
-            for (int j = 0; j < rows; j++) {
+            for (int j = 0; j < cols; j++) {
+                // draw left wall
                 if (grid[i][j].getLeft() == true) {
                     System.out.print("|   ");
                 } else {
@@ -188,7 +201,7 @@ public class HuntnKill {
             System.out.println("|");
 
         }
-        for (int j = 0; j < rows; j++) {
+        for (int j = 0; j < cols; j++) {
             System.out.print("+---");
         }
         System.out.println("+");

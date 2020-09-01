@@ -61,5 +61,6 @@ public class CellTest {
         cell.setVisited();
         assertEquals(cell.getVisited(), true);
     }
+    
 
 }
