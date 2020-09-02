@@ -18,10 +18,11 @@ import mazegenerator.domain.HuntnKill;
 public class Ui {
 
     public void start() {
-        int x = 10;
-        int y = 10;
+        int x = 200;
+        int y = 200;
 
         int read = 99;
+
         while (read != 0) {
             try {
                 Scanner sc = new Scanner(System.in);
@@ -33,7 +34,7 @@ public class Ui {
                 System.out.println("3. Build Hunt And Kill Maze");
                 System.out.println("4. Build Aldous-Broder Maze");
                 System.out.println("5. Build All");
-                System.out.println("6. Get average build times within 10 build");
+                System.out.println("6. Average generation time from 10 runs");
                 System.out.println("0. To EXIT");
                 System.out.print("Input value ");
                 read = sc.nextInt();
@@ -141,16 +142,17 @@ public class Ui {
                     ab.draw();
 
                     System.out.println("");
-                    System.out.println("Time spent to build Recursive backtracker Maze " + ((loppu - alku) / 1e9) + " s");
-                    System.out.println("Time spent to build Binary Tree Maze " + ((loppu1 - alku1) / 1e9) + " s");
-                    System.out.println("Time spent to build Hunt And Kill Maze " + ((loppu2 - alku2) / 1e9) + " s");
-                    System.out.println("Time spent to build Aldous-Broder Maze " + ((loppu3 - alku3) / 1e9) + " s");
+                    System.out.println("Time spent to build Recursive backtracker Maze " + ((loppu - alku) / 1e6) + " s");
+                    System.out.println("Time spent to build Binary Tree Maze " + ((loppu1 - alku1) / 1e6) + " s");
+                    System.out.println("Time spent to build Hunt And Kill Maze " + ((loppu2 - alku2) / 1e6) + " s");
+                    System.out.println("Time spent to build Aldous-Broder Maze " + ((loppu3 - alku3) / 1e6) + " s");
                 }
                 if (read == 6) {
                     long dfsTotal = 0;
                     long btTotal = 0;
                     long hnkTotal = 0;
                     long abTotal = 0;
+
                     for (int i = 0; i < 10; i++) {
                         long alku = System.nanoTime();
                         DfsRec dfs = new DfsRec(x, y);
@@ -180,10 +182,13 @@ public class Ui {
                         abTotal += (loppu - alku);
                     }
 
-                    System.out.println("dfs: " + (dfsTotal / 10) / 1e9 + "s");
-                    System.out.println("bt: " + (btTotal / 10) / 1e9);
-                    System.out.println("hnk: " + (hnkTotal / 10) / 1e9);
-                    System.out.println("ab: " + (abTotal / 10) / 1e9);
+                    System.out.println("************************************");
+                    System.out.println("*     Average time from 10 runs    *");
+                    System.out.println("************************************");
+                    System.out.println("dfs: " + (dfsTotal / 10) / 1e6 + " s");
+                    System.out.println("bt: " + (btTotal / 10) / 1e6 + " s");
+                    System.out.println("hnk: " + (hnkTotal / 10) / 1e6 + " s");
+                    System.out.println("ab: " + (abTotal / 10) / 1e6 + "s ");
 
                 }
 

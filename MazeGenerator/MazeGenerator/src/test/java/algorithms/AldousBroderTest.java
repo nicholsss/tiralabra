@@ -30,6 +30,7 @@ public class AldousBroderTest {
         Cell[][] grid;
         grid = new Cell[x][y];
         AldousBroder ab = new AldousBroder(x, y);
+        assertNotNull(ab.checkNeighbour(grid[1][1]));
 
         ab.generateMaze();
     }

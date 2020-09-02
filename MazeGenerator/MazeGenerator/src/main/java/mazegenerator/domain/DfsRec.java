@@ -37,7 +37,7 @@ public class DfsRec {
                 grid[i][j] = new Cell(i, j);
             }
         }
-      
+        
 
     }
 
@@ -140,9 +140,9 @@ public class DfsRec {
         for (int i = 0; i < cols; i++) {
 
             for (int j = 0; j < rows; j++) {
-               
+
                 if (grid[i][j].getTop() == true) {
-                    
+
                     System.out.print("+---");
                 } else {
                     System.out.print("+   ");
