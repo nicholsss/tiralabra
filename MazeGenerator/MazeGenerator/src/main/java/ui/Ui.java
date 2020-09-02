@@ -18,14 +18,18 @@ import mazegenerator.domain.HuntnKill;
 public class Ui {
 
     public void start() {
-        int x = 200;
-        int y = 200;
+        //int x = 25;
+        //int y = 25;
+        Scanner sc = new Scanner(System.in);
+        int reader = 99;
+        System.out.println("Give row and column size");
+        reader = sc.nextInt();
 
-        int read = 99;
-
-        while (read != 0) {
+        int x = reader;
+        int y = reader;
+        while (reader != 0) {
             try {
-                Scanner sc = new Scanner(System.in);
+
                 System.out.println("");
                 System.out.println("Welcome to maze builder");
 
@@ -37,9 +41,9 @@ public class Ui {
                 System.out.println("6. Average generation time from 10 runs");
                 System.out.println("0. To EXIT");
                 System.out.print("Input value ");
-                read = sc.nextInt();
+                reader = sc.nextInt();
                 System.out.println("");
-                if (read == 1) {
+                if (reader == 1) {
                     System.out.println("");
 
                     long alku = System.nanoTime();
@@ -51,11 +55,11 @@ public class Ui {
                     dfs.generateMaze();
                     long loppu = System.nanoTime();
                     dfs.draw();
-                    System.out.println("Time spent to build Recursive backtracker Maze " + ((loppu - alku) / 1e9) + " s");
+                    System.out.println("Time spent to build Recursive backtracker Maze " + ((loppu - alku) / 1e6) + " ms");
 
                 }
                 System.out.println("");
-                if (read == 2) {
+                if (reader == 2) {
                     System.out.println("");
                     System.out.println("********************");
                     System.out.println("* Binary Tree Maze *");
@@ -66,10 +70,10 @@ public class Ui {
                     binary.generateMaze();
                     long loppu1 = System.nanoTime();
                     binary.draw();
-                    System.out.println("Time spent to build Binary Tree Maze " + ((loppu1 - alku1) / 1e9) + " s");
+                    System.out.println("Time spent to build Binary Tree Maze " + ((loppu1 - alku1) / 1e6) + " ms");
                 }
                 System.out.println("");
-                if (read == 3) {
+                if (reader == 3) {
                     long alku = System.nanoTime();
 
                     HuntnKill hnk = new HuntnKill(x, y);
@@ -79,11 +83,11 @@ public class Ui {
                     hnk.generateMaze();
                     long loppu = System.nanoTime();
                     hnk.draw();
-                    System.out.println("Time spent to build Hunt And Kill Maze " + ((loppu - alku) / 1e9) + " s");
+                    System.out.println("Time spent to build Hunt And Kill Maze " + ((loppu - alku) / 1e6) + " ms");
 
                 }
                 System.out.println("");
-                if (read == 4) {
+                if (reader == 4) {
                     long alku = System.nanoTime();
 
                     AldousBroder ab = new AldousBroder(x, y);
@@ -94,12 +98,12 @@ public class Ui {
                     long loppu = System.nanoTime();
 
                     ab.draw();
-                    System.out.println("Time spent to build Aldous-Broder Maze " + ((loppu - alku) / 1e9) + " s");
+                    System.out.println("Time spent to build Aldous-Broder Maze " + ((loppu - alku) / 1e6) + " ms");
 
                 }
 
                 System.out.println("");
-                if (read == 5) {
+                if (reader == 5) {
                     System.out.println("");
 
                     System.out.println("*************************");
@@ -142,12 +146,12 @@ public class Ui {
                     ab.draw();
 
                     System.out.println("");
-                    System.out.println("Time spent to build Recursive backtracker Maze " + ((loppu - alku) / 1e6) + " s");
-                    System.out.println("Time spent to build Binary Tree Maze " + ((loppu1 - alku1) / 1e6) + " s");
-                    System.out.println("Time spent to build Hunt And Kill Maze " + ((loppu2 - alku2) / 1e6) + " s");
-                    System.out.println("Time spent to build Aldous-Broder Maze " + ((loppu3 - alku3) / 1e6) + " s");
+                    System.out.println("Time spent to build Recursive backtracker Maze " + ((loppu - alku) / 1e6) + " ms");
+                    System.out.println("Time spent to build Binary Tree Maze " + ((loppu1 - alku1) / 1e6) + " ms");
+                    System.out.println("Time spent to build Hunt And Kill Maze " + ((loppu2 - alku2) / 1e6) + " ms");
+                    System.out.println("Time spent to build Aldous-Broder Maze " + ((loppu3 - alku3) / 1e6) + " ms");
                 }
-                if (read == 6) {
+                if (reader == 6) {
                     long dfsTotal = 0;
                     long btTotal = 0;
                     long hnkTotal = 0;
@@ -185,14 +189,14 @@ public class Ui {
                     System.out.println("************************************");
                     System.out.println("*     Average time from 10 runs    *");
                     System.out.println("************************************");
-                    System.out.println("dfs: " + (dfsTotal / 10) / 1e6 + " s");
-                    System.out.println("bt: " + (btTotal / 10) / 1e6 + " s");
-                    System.out.println("hnk: " + (hnkTotal / 10) / 1e6 + " s");
-                    System.out.println("ab: " + (abTotal / 10) / 1e6 + "s ");
+                    System.out.println("dfs: " + (dfsTotal / 10) / 1e6 + " ms");
+                    System.out.println("bt: " + (btTotal / 10) / 1e6 + " ms");
+                    System.out.println("hnk: " + (hnkTotal / 10) / 1e6 + " ms");
+                    System.out.println("ab: " + (abTotal / 10) / 1e6 + " ms");
 
                 }
 
-                if (read == 0) {
+                if (reader == 0) {
                     break;
                 }
             } catch (Exception e) {
