@@ -37,7 +37,6 @@ public class DfsRec {
                 grid[i][j] = new Cell(i, j);
             }
         }
-        
 
     }
 
@@ -102,7 +101,7 @@ public class DfsRec {
 
         }
         //Check current cell bottom neighbour
-        if (x + 1 != cols && !grid[x + 1][y].getVisited()) {
+        if (x + 1 != rows && !grid[x + 1][y].getVisited()) {
 
             neighbours.add(grid[x + 1][y]);
         }
@@ -135,14 +134,12 @@ public class DfsRec {
     /**
      * Draw ASCII maze
      */
-    // cols == y
     public void draw() {
-        for (int i = 0; i < cols; i++) {
 
-            for (int j = 0; j < rows; j++) {
+        for (int i = 0; i < rows; i++) {
 
+            for (int j = 0; j < cols; j++) {
                 if (grid[i][j].getTop() == true) {
-
                     System.out.print("+---");
                 } else {
                     System.out.print("+   ");
@@ -150,7 +147,7 @@ public class DfsRec {
 
             }
             System.out.println("+");
-            for (int j = 0; j < rows; j++) {
+            for (int j = 0; j < cols; j++) {
                 if (grid[i][j].getLeft() == true) {
                     System.out.print("|   ");
                 } else {
@@ -161,7 +158,7 @@ public class DfsRec {
             System.out.println("|");
 
         }
-        for (int j = 0; j < rows; j++) {
+        for (int j = 0; j < cols; j++) {
             System.out.print("+---");
         }
         System.out.println("+");

@@ -74,13 +74,13 @@ public class AldousBroder {
         }
 
         //Check current cell right neighbour
-        if (y + 1 != rows) {
+        if (y + 1 != cols) {
 
             neighbours.add(grid[x][y + 1]);
 
         }
         //Check current cell bottom neighbour
-        if (x + 1 != cols) {
+        if (x + 1 != rows) {
 
             neighbours.add(grid[x + 1][y]);
         }
@@ -99,13 +99,12 @@ public class AldousBroder {
         return cell;
     }
 
-    public void draw() {
-        for (int i = 0; i < cols; i++) {
+      public void draw() {
+       
+        for (int i = 0; i < rows; i++) {
 
-            for (int j = 0; j < rows; j++) {
-
+            for (int j = 0; j < cols; j++) {
                 if (grid[i][j].getTop() == true) {
-
                     System.out.print("+---");
                 } else {
                     System.out.print("+   ");
@@ -113,7 +112,7 @@ public class AldousBroder {
 
             }
             System.out.println("+");
-            for (int j = 0; j < rows; j++) {
+            for (int j = 0; j < cols; j++) {
                 if (grid[i][j].getLeft() == true) {
                     System.out.print("|   ");
                 } else {
@@ -124,7 +123,7 @@ public class AldousBroder {
             System.out.println("|");
 
         }
-        for (int j = 0; j < rows; j++) {
+        for (int j = 0; j < cols; j++) {
             System.out.print("+---");
         }
         System.out.println("+");

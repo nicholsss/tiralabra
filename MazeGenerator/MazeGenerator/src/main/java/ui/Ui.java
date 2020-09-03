@@ -17,16 +17,29 @@ import mazegenerator.domain.HuntnKill;
  */
 public class Ui {
 
+    int x;
+    int y;
+    Scanner sc = new Scanner(System.in);
+
     public void start() {
         //int x = 25;
         //int y = 25;
-        Scanner sc = new Scanner(System.in);
-        int reader = 99;
-        System.out.println("Give row and column size");
-        reader = sc.nextInt();
 
-        int x = reader;
-        int y = reader;
+        int reader = 99;
+        System.out.println(" __  __                _____                           _             \n"
+                + " |  \\/  |              / ____|                         | |            \n"
+                + " | \\  / | __ _ _______| |  __  ___ _ __   ___ _ __ __ _| |_ ___  _ __ \n"
+                + " | |\\/| |/ _` |_  / _ \\ | |_ |/ _ \\ '_ \\ / _ \\ '__/ _` | __/ _ \\| '__|\n"
+                + " | |  | | (_| |/ /  __/ |__| |  __/ | | |  __/ | | (_| | || (_) | |   \n"
+                + " |_|  |_|\\__,_/___\\___|\\_____|\\___|_| |_|\\___|_|  \\__,_|\\__\\___/|_|   \n"
+                + "                                                                      \n"
+                + "                                                                      ");
+        System.out.print("Give row size: ");
+        int readerX = sc.nextInt();
+        System.out.print("Give column size: ");
+        int readerY = sc.nextInt();
+        int x = readerX;
+        int y = readerY;
         while (reader != 0) {
             try {
 
@@ -39,6 +52,7 @@ public class Ui {
                 System.out.println("4. Build Aldous-Broder Maze");
                 System.out.println("5. Build All");
                 System.out.println("6. Average generation time from 10 runs");
+                System.out.println("7. For new row and column size");
                 System.out.println("0. To EXIT");
                 System.out.print("Input value ");
                 reader = sc.nextInt();
@@ -95,6 +109,7 @@ public class Ui {
                     System.out.println("*     Aldrous-Broder    *");
                     System.out.println("*************************");
                     ab.generateMaze();
+
                     long loppu = System.nanoTime();
 
                     ab.draw();
@@ -194,6 +209,14 @@ public class Ui {
                     System.out.println("hnk: " + (hnkTotal / 10) / 1e6 + " ms");
                     System.out.println("ab: " + (abTotal / 10) / 1e6 + " ms");
 
+                }
+                if (reader == 7) {
+                    System.out.print("Give row size: ");
+                    int newX = sc.nextInt();
+                    System.out.print("Give column size: ");
+                    int newY = sc.nextInt();
+                    x = newX;
+                    y = newY;
                 }
 
                 if (reader == 0) {

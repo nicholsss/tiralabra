@@ -103,7 +103,7 @@ public class HuntnKill {
 
         }
         //Check current cell bottom neighbour
-        if (x + 1 != cols && !grid[x + 1][y].getVisited()) {
+        if (x + 1 != rows && !grid[x + 1][y].getVisited()) {
 
             neighbours.add(grid[x + 1][y]);
         }
@@ -144,13 +144,13 @@ public class HuntnKill {
         }
 
         //Check current cell right neighbour
-        if (y + 1 != rows && grid[x][y + 1].getVisited()) {
+        if (y + 1 != cols && grid[x][y + 1].getVisited()) {
 
             visitedNeighbour.add(grid[x][y + 1]);
 
         }
         //Check current cell bottom neighbour
-        if (x + 1 != cols && grid[x + 1][y].getVisited()) {
+        if (x + 1 != rows && grid[x + 1][y].getVisited()) {
 
             visitedNeighbour.add(grid[x + 1][y]);
         }
@@ -171,25 +171,19 @@ public class HuntnKill {
     }
 
     public void draw() {
-        //go row by row
+
         for (int i = 0; i < rows; i++) {
 
             for (int j = 0; j < cols; j++) {
-
-                // if cell has top wall draw it
                 if (grid[i][j].getTop() == true) {
-
                     System.out.print("+---");
-                    // if cell doesn't have top wall skip it
                 } else {
                     System.out.print("+   ");
                 }
 
             }
-
             System.out.println("+");
             for (int j = 0; j < cols; j++) {
-                // draw left wall
                 if (grid[i][j].getLeft() == true) {
                     System.out.print("|   ");
                 } else {

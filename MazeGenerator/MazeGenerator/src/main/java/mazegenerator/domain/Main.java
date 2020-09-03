@@ -23,6 +23,17 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        //BinaryTree bt = new BinaryTree(15, 20);
+        //bt.generateMaze();
+        // bt.draw();
+        /*
+        DfsRec dfs = new DfsRec(3, 2);
+        System.out.println("hasjooooos");
+        dfs.generateMaze();
+        System.out.println("hajos");
+        dfs.draw();
+
+         */
         Ui ui = new Ui();
         ui.start();
 
