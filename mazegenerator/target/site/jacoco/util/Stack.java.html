@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Stack.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mazegenerator</a> &gt; <a href="index.source.html" class="el_package">util</a> &gt; <span class="el_source">Stack.java</span></div><h1>Stack.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package util;
+
+/**
+ *
+ * @author nicholas
+ */
+public class Stack {
+
+    private int last;
+    private Cell[] list;
+
+<span class="fc" id="L17">    public Stack(int size) {</span>
+<span class="fc" id="L18">        last = -1;</span>
+<span class="fc" id="L19">        list = new Cell[size];</span>
+
+<span class="fc" id="L21">    }</span>
+
+    /**
+     *
+     * @return cell object from stack
+     */
+    public Cell pop() {
+
+<span class="fc" id="L29">        Cell cell = list[last];</span>
+<span class="fc" id="L30">        last--;</span>
+<span class="fc" id="L31">        return cell;</span>
+
+    }
+
+    /**
+     *
+     * @param cell cell object.
+     */
+    public void add(Cell cell) {
+<span class="fc" id="L40">        last++;</span>
+<span class="fc" id="L41">        list[last] = cell;</span>
+
+<span class="fc" id="L43">    }</span>
+
+    /**
+     * Check if list is empty or not
+     *
+     * @return returns Boolean depending from list
+     */
+    public boolean isEmpty() {
+
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (last == -1) {</span>
+<span class="fc" id="L53">            return true;</span>
+        }
+<span class="fc" id="L55">        return false;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

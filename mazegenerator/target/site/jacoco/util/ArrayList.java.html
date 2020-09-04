@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ArrayList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mazegenerator</a> &gt; <a href="index.source.html" class="el_package">util</a> &gt; <span class="el_source">ArrayList.java</span></div><h1>ArrayList.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package util;
+
+/**
+ *
+ * @author nicholas
+ */
+public class ArrayList&lt;T&gt; {
+
+    private T[] list;
+    private int count;
+
+<span class="fc" id="L17">    public ArrayList() {</span>
+<span class="fc" id="L18">        this.list = (T[]) new Object[10];</span>
+<span class="fc" id="L19">        this.count = 0;</span>
+<span class="fc" id="L20">    }</span>
+
+    public void add(T value) {
+<span class="pc bpc" id="L23" title="1 of 2 branches missed.">        if (this.count == this.list.length) {</span>
+<span class="nc" id="L24">            increaseSize();</span>
+        }
+<span class="fc" id="L26">        this.list[this.count] = value;</span>
+<span class="fc" id="L27">        this.count++;</span>
+<span class="fc" id="L28">    }</span>
+
+    private void increaseSize() {
+<span class="nc" id="L31">        int newSize = this.list.length + this.list.length / 2;</span>
+<span class="nc" id="L32">        T[] newList = (T[]) new Object[newSize];</span>
+
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        for (int i = 0; i &lt; this.list.length; i++) {</span>
+<span class="nc" id="L35">            newList[i] = this.list[i];</span>
+        }
+<span class="nc" id="L37">        this.list = newList;</span>
+<span class="nc" id="L38">    }</span>
+
+    public int size() {
+
+<span class="fc" id="L42">        return this.count;</span>
+    }
+
+    public T get(int k) {
+<span class="fc" id="L46">        return list[k];</span>
+    }
+
+    public boolean isEmpty() {
+<span class="fc" id="L50">        boolean value = false;</span>
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        if (count == 0) {</span>
+<span class="fc" id="L52">            value = true;</span>
+        }
+<span class="fc" id="L54">        return value;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

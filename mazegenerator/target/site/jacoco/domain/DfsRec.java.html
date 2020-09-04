@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DfsRec.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mazegenerator</a> &gt; <a href="index.source.html" class="el_package">domain</a> &gt; <span class="el_source">DfsRec.java</span></div><h1>DfsRec.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package domain;
+
+import java.util.List;
+import java.util.Random;
+import util.ArrayList;
+import util.Cell;
+import util.Stack;
+
+/**
+ *
+ * @author nicholas
+ */
+public class DfsRec {
+
+    private Cell[][] grid;
+    List&lt;Cell&gt; neighbours;
+    int rows;
+    int cols;
+
+    /**
+     *
+     * @param rows amount of rows for grid
+     * @param cols amount of cols for grid
+     */
+<span class="fc" id="L30">    public DfsRec(int rows, int cols) {</span>
+<span class="fc" id="L31">        this.rows = rows;</span>
+<span class="fc" id="L32">        this.cols = cols;</span>
+
+<span class="fc" id="L34">        grid = new Cell[this.rows][this.cols];</span>
+
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (int i = 0; i &lt; this.rows; i++) {</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">            for (int j = 0; j &lt; this.cols; j++) {</span>
+<span class="fc" id="L38">                grid[i][j] = new Cell(i, j);</span>
+            }
+        }
+
+<span class="fc" id="L42">    }</span>
+
+    /**
+     * Here is our recursive method which checks our cell if it has neighbors.
+     *
+     */
+    public Cell[][] generateMaze() {
+        // we give stack size rows*cols so it's big enought. 
+<span class="fc" id="L50">        Stack stack = new Stack(this.rows * this.cols);</span>
+        //First cell where we start.
+
+<span class="fc" id="L53">        Cell current = grid[0][0];</span>
+<span class="fc" id="L54">        current.setVisited();</span>
+<span class="fc" id="L55">        stack.add(current);</span>
+
+        // keep going while there are cells in stack
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        while (!stack.isEmpty()) {</span>
+
+            // check current cell neighbours
+<span class="fc" id="L61">            Cell next = checkValidNeighbours(current);</span>
+
+            // if we got an cell, mark is visited and add it to stack.
+<span class="fc bfc" id="L64" title="All 2 branches covered.">            if (next != null) {</span>
+<span class="fc" id="L65">                next.setVisited();</span>
+<span class="fc" id="L66">                stack.add(next);</span>
+<span class="fc" id="L67">                current.removeWalls(next);</span>
+<span class="fc" id="L68">                current = next;</span>
+                // if we didnt get cell with neighbours take cell from top of our stack.
+            } else {
+<span class="fc" id="L71">                next = stack.pop();</span>
+<span class="fc" id="L72">                current = grid[next.getX()][next.getY()];</span>
+            }
+<span class="fc" id="L74">        }</span>
+<span class="fc" id="L75">        return grid;</span>
+
+    }
+
+    /**
+     * Check if cell neighbors is in grid, and that it's not visited
+     *
+     * @param current current cell, which neighbors we need to check.
+     * @return a random neighbor from our list if it has neighbors, if not
+     * return null
+     */
+    public Cell checkValidNeighbours(Cell current) {
+        //neighbours = new ArrayList&lt;Cell&gt;();
+
+<span class="fc" id="L89">        ArrayList&lt;Cell&gt; neighbours = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L90">        int x = current.getX();</span>
+<span class="fc" id="L91">        int y = current.getY();</span>
+
+<span class="fc" id="L93">        Cell cell = null;</span>
+        //top
+<span class="fc bfc" id="L95" title="All 4 branches covered.">        if (x - 1 != -1 &amp;&amp; !grid[x - 1][y].getVisited()) {</span>
+
+<span class="fc" id="L97">            neighbours.add(grid[x - 1][y]);</span>
+        }
+
+        //Check current cell right neighbour
+<span class="fc bfc" id="L101" title="All 4 branches covered.">        if (y + 1 != cols &amp;&amp; !grid[x][y + 1].getVisited()) {</span>
+
+<span class="fc" id="L103">            neighbours.add(grid[x][y + 1]);</span>
+
+        }
+        //Check current cell bottom neighbour
+<span class="fc bfc" id="L107" title="All 4 branches covered.">        if (x + 1 != rows &amp;&amp; !grid[x + 1][y].getVisited()) {</span>
+
+<span class="fc" id="L109">            neighbours.add(grid[x + 1][y]);</span>
+        }
+        //Check current cell left neighbour
+<span class="fc bfc" id="L112" title="All 4 branches covered.">        if (y - 1 != -1 &amp;&amp; !grid[x][y - 1].getVisited()) {</span>
+
+<span class="fc" id="L114">            neighbours.add(grid[x][y - 1]);</span>
+        }
+
+        // if there is over 0 neighbour choose one of them randomly.
+<span class="fc bfc" id="L118" title="All 2 branches covered.">        if (neighbours.size() &gt; 0) {</span>
+<span class="fc" id="L119">            cell = neighbours.get(new Random().nextInt(neighbours.size()));</span>
+
+        }
+
+<span class="fc" id="L123">        return cell;</span>
+
+    }
+
+    public Cell[][] getGrid() {
+
+<span class="fc" id="L129">        return grid;</span>
+    }
+
+    /**
+     * Draw ASCII maze
+     */
+    public void draw() {
+
+<span class="nc bnc" id="L137" title="All 2 branches missed.">        for (int i = 0; i &lt; rows; i++) {</span>
+
+<span class="nc bnc" id="L139" title="All 2 branches missed.">            for (int j = 0; j &lt; cols; j++) {</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">                if (grid[i][j].getTop() == true) {</span>
+<span class="nc" id="L141">                    System.out.print(&quot;+---&quot;);</span>
+                } else {
+<span class="nc" id="L143">                    System.out.print(&quot;+   &quot;);</span>
+                }
+
+            }
+<span class="nc" id="L147">            System.out.println(&quot;+&quot;);</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">            for (int j = 0; j &lt; cols; j++) {</span>
+<span class="nc bnc" id="L149" title="All 2 branches missed.">                if (grid[i][j].getLeft() == true) {</span>
+<span class="nc" id="L150">                    System.out.print(&quot;|   &quot;);</span>
+                } else {
+<span class="nc" id="L152">                    System.out.print(&quot;    &quot;);</span>
+                }
+
+            }
+<span class="nc" id="L156">            System.out.println(&quot;|&quot;);</span>
+
+        }
+<span class="nc bnc" id="L159" title="All 2 branches missed.">        for (int j = 0; j &lt; cols; j++) {</span>
+<span class="nc" id="L160">            System.out.print(&quot;+---&quot;);</span>
+        }
+<span class="nc" id="L162">        System.out.println(&quot;+&quot;);</span>
+<span class="nc" id="L163">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

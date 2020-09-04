@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cell.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mazegenerator</a> &gt; <a href="index.source.html" class="el_package">util</a> &gt; <span class="el_source">Cell.java</span></div><h1>Cell.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package util;
+
+public class Cell {
+
+    private int x;
+    private int y;
+    private boolean visited;
+    private boolean top;
+    private boolean right;
+    private boolean bottom;
+    private boolean left;
+
+    /**
+     *
+     * @param x is rows
+     * @param y is columns
+     */
+<span class="fc" id="L23">    public Cell(int x, int y) {</span>
+
+<span class="fc" id="L25">        this.x = x;</span>
+<span class="fc" id="L26">        this.y = y;</span>
+<span class="fc" id="L27">        this.visited = false;</span>
+<span class="fc" id="L28">        this.top = true;</span>
+<span class="fc" id="L29">        this.right = true;</span>
+<span class="fc" id="L30">        this.bottom = true;</span>
+<span class="fc" id="L31">        this.left = true;</span>
+
+<span class="fc" id="L33">    }</span>
+
+    /**
+     *
+     * @return cell value x
+     */
+    public int getX() {
+<span class="fc" id="L40">        return x;</span>
+    }
+
+    public int getY() {
+<span class="fc" id="L44">        return y;</span>
+    }
+
+    /**
+     *
+     * @return cell visited value.
+     */
+    public boolean getVisited() {
+<span class="fc" id="L52">        return visited;</span>
+    }
+
+    /**
+     * Change visited Boolean to true
+     *
+     */
+    public void setVisited() {
+<span class="fc" id="L60">        this.visited = true;</span>
+<span class="fc" id="L61">    }</span>
+
+    public void setTop() {
+<span class="fc" id="L64">        this.top = false;</span>
+
+<span class="fc" id="L66">    }</span>
+
+    public void setRight() {
+<span class="fc" id="L69">        this.right = false;</span>
+<span class="fc" id="L70">    }</span>
+
+    public void setLeft() {
+<span class="fc" id="L73">        this.left = false;</span>
+<span class="fc" id="L74">    }</span>
+
+    public void setBottom() {
+<span class="fc" id="L77">        this.bottom = false;</span>
+<span class="fc" id="L78">    }</span>
+
+    public boolean getTop() {
+<span class="fc" id="L81">        return top;</span>
+    }
+
+    public boolean getRight() {
+<span class="fc" id="L85">        return right;</span>
+    }
+
+    public boolean getBottom() {
+<span class="fc" id="L89">        return bottom;</span>
+    }
+
+    public boolean getLeft() {
+<span class="fc" id="L93">        return left;</span>
+    }
+
+    /**
+     * minus current cell x value, from next cell x value. Depending from
+     * outcome we delete left and right wall, and vice-versa when we get -1.
+     * Same goes with y value.
+     *
+     * @param next
+     */
+    public void removeWalls(Cell next) {
+<span class="fc" id="L104">        int col = this.y - next.y;</span>
+
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        if (col == 1) {</span>
+<span class="fc" id="L107">            this.setLeft();</span>
+<span class="fc" id="L108">            next.setRight();</span>
+            //this.left = false;
+            //next.right = false;
+
+<span class="fc bfc" id="L112" title="All 2 branches covered.">        } else if (col == -1) {</span>
+<span class="fc" id="L113">            this.setRight();</span>
+<span class="fc" id="L114">            next.setLeft();</span>
+            //  this.right = false;
+            // next.left = false;
+        }
+
+<span class="fc" id="L119">        int row = this.x - next.x;</span>
+
+<span class="fc bfc" id="L121" title="All 2 branches covered.">        if (row == 1) {</span>
+<span class="fc" id="L122">            this.setTop();</span>
+<span class="fc" id="L123">            next.setBottom();</span>
+            //this.top = false;
+            //next.bottom = false;
+<span class="fc bfc" id="L126" title="All 2 branches covered.">        } else if (row == -1) {</span>
+<span class="fc" id="L127">            this.setBottom();</span>
+<span class="fc" id="L128">            next.setTop();</span>
+            // this.bottom = false;
+            // next.top = false;
+        }
+
+<span class="fc" id="L133">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
