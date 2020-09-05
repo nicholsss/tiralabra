@@ -36,7 +36,7 @@ Satunnaisesti rakennettu sokkelo, jonka koot on mainittu taulukossa. Algoritmien
 
 #### AldousBroder
 Aldous broderin heikkous on siinä että jos sillä aloitetaan tekemään liian suurta sokkeloa, niin voi syntyä tilanne jossa se ei koskaan saa sokkeloa tehtyä,
-sillä algoritmi valitsee aina satunnaisesti solun johon mennä, ja tämän takia on mahdollisuus ettei sokkelo koskaan valmistuisi.
+sillä algoritmi valitsee aina satunnaisesti solun johon mennä, ja tämän takia on mahdollisuus ettei sokkelo koskaan valmistuisi. Koska algoritmissa ei tarvita pitää kirjaa käydyistä soluista on sen tilavaativuus O(n), koska käytössä on lista johon lisätään solun mahdollisia naapureita.
 
 |  Rows         | Cols           |   Time ms     |
 | ------------- | ------------- | -------------  |
@@ -49,7 +49,7 @@ sillä algoritmi valitsee aina satunnaisesti solun johon mennä, ja tämän taki
 
 
 #### BinaryTree
-BinaryTree suoriutuu ajassa O(n), koska algoritmi käy kaikissa soluissa ainoastaan kerran, eikä sen tarvitse pitää kirjaa mistään, tämän takia Kyseisellä algoritmilla pystytään tekemään erittäin suuria sokkeloita. 
+BinaryTree suoriutuu ajassa O(n), koska algoritmi käy kaikissa soluissa ainoastaan kerran, eikä sen tarvitse pitää kirjaa mistään, tämän takia Kyseisellä algoritmilla pystytään tekemään erittäin suuria sokkeloita. Algoritmin tilavaativuus on O(n) koska käytössä on lista johon lisätään solun mahdolliset 2 naapuria.
 
 |  Rows   | Cols       |    Time ms |
 | ------------- | ------------- | ------------- | 
@@ -62,8 +62,8 @@ BinaryTree suoriutuu ajassa O(n), koska algoritmi käy kaikissa soluissa ainoast
 
 
 
-#### Dfs
-Randomized Depth-First_search(recursive backtracker) suoriutuu ajassa O(|V| + |E|), ja sen tilavaativuus on O(|V|), koska käytössämme on *Stack*, jonka tilavaativuus on pahimmassa tapauksessa O(n). Isoille sokkeloille tämä saattaa on ongelmaista, sillä *Stack* koko pitää olla vähintään sokkelon kokoinen.
+#### Randomized Depth-First_search(recursive backtracker)
+Randomized Depth-First_search(recursive backtracker) suoriutuu ajassa O(|V| + |E|), ja sen tilavaativuus on O(n^2), koska käytössämme on *Stack*, jonka tilavaativuus on pahimmassa tapauksessa O(n). Isoille sokkeloille tämä saattaa on ongelmaista, sillä *Stack* koko pitää olla vähintään sokkelon kokoinen.
 |  Rows         | Cols          | Time ms      
 | ------------- | -------------  | ------------- |
 | 10            | 10             | 0.07  |
@@ -74,6 +74,7 @@ Randomized Depth-First_search(recursive backtracker) suoriutuu ajassa O(|V| + |E
 |1600           | 1600          | 247 |
 
 #### Hunt And Kill
+Hunt And Kill algoritmi on hyvä algoritmi isoille sokkeloille, siinä mielessä että sen pienin tilavaativuudeltaan, synny sellaista ongelmaa että muisti loppuisi kesken. Hunt And Killin hitain vaihe on siinä, kun joudutaan etsimään viimeinen solu, ja käymään koko sokkelo läpi varmistaen että kaikki solut ovat käytyjä. Kyseiseen ongelmaan löytyy kuitenkin erilaisia ratkaisuja algoritmi nopeuttamiseen. Algoritmin tilavaativuus on O(n) koska siinä on lista johon lisätään mahdolliset naapurit solulle.
 |  Rows          | Cols       | Time ms    | 
 | ------------- | ------------- | ------------- | 
 | 10            | 10        | 0.11 | 
