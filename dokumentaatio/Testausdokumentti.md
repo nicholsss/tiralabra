@@ -17,15 +17,18 @@ Testataan että Cell(solulla) on oikeat arvot. Testataan että solulta voidaan p
 ## domain
 Sisältää ohjelman algoritmit, AldousBroder, BinaryTree, Randomized depth-first search ja HuntAndKill.
 
+## Nopeustestit
+Satunnaisesti rakennettu sokkelo, jonka koot on mainittu taulukossa. Algoritmien nopeudet ovat keskiarvo 10 eri suorituksesta.
+
 #### AldousBroder
-|  Rows * Cols  | Time ms       | Iterations    | Second Header |  
-| ------------- | ------------- | ------------- | ------------- |
-| 10            | 0.5           | Content Cell  | Content Cell  |
-| 100           | 27            | Content Cell  | Content Cell  |
-| 200           | 126.9         | Content Cell  | Content Cell  |
-| 400           | 625.8         | Content Cell  | Content Cell  |
-| 800           | 2888          | Content Cell  | Content Cell  |
-|1600           | 14775         | Content Cell  | Content Cell  |
+|  Rows * Cols  | Time ms       |   
+| ------------- | ------------- | 
+| 10            | 0.5           | 
+| 100           | 27            | 
+| 200           | 126.9         | 
+| 400           | 625.8         | 
+| 800           | 2888          | 
+|1600           | 14775         | 
 
 
 #### BinaryTree
