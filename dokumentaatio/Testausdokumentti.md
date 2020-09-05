@@ -33,7 +33,7 @@ Testataan että että soluilla ei ole sellaista tilannetta että generoinnin jä
 Satunnaisesti rakennettu sokkelo, jonka koot on mainittu taulukossa. Algoritmien nopeudet ovat keskiarvo 10 eri suorituksesta.
 
 #### AldousBroder
-|  Rows *       | Cols           |   Time ms     |
+|  Rows         | Cols           |   Time ms     |
 | ------------- | ------------- | -------------  |
 | 10            | 10          |             0.5|
 | 100           | 100            |              27|
@@ -66,7 +66,7 @@ Satunnaisesti rakennettu sokkelo, jonka koot on mainittu taulukossa. Algoritmien
 |1600           | 1600          | 247 |
 
 #### Hunt And Kill
-|  Rows * Cols  | Cols       | Time ms    | 
+|  Rows          | Cols       | Time ms    | 
 | ------------- | ------------- | ------------- | 
 | 10            | 10        | 0.11 | 
 | 100           | 100       | 3.4 | 
@@ -75,5 +75,3 @@ Satunnaisesti rakennettu sokkelo, jonka koot on mainittu taulukossa. Algoritmien
 | 800           | 800         | 23089 | 
 |1600           | 1600        | - |
 
-*Binary Tree* yksi valtti on siinä ei tarvitse pitää kirjaa käydyistä soluista, eikä sen tarvitse palata taaksepäin etsimään mahdollisia ohitettuja soluja,
-koska siinä mennään systemaattisesti kaikki solut läpi kerran.
