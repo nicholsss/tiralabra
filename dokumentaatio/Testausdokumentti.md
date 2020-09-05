@@ -32,7 +32,12 @@ Testataan että että soluilla ei ole sellaista tilannetta että generoinnin jä
 ## Tehokkuusvertailu
 Satunnaisesti rakennettu sokkelo, jonka koot on mainittu taulukossa. Algoritmien nopeudet ovat keskiarvo 10 eri suorituksesta.
 
+
+
 #### AldousBroder
+Aldous broderin heikkous on siinä että jos sillä aloitetaan tekemään liian suurta sokkeloa, niin voi syntyä tilanne jossa se ei koskaan saa sokkeloa tehtyä,
+sillä algoritmi valitsee aina satunnaisesti solun johon mennä, ja tämän takia on mahdollisuus ettei sokkelo koskaan valmistuisi.
+
 |  Rows         | Cols           |   Time ms     |
 | ------------- | ------------- | -------------  |
 | 10            | 10          |             0.5|
@@ -44,6 +49,8 @@ Satunnaisesti rakennettu sokkelo, jonka koot on mainittu taulukossa. Algoritmien
 
 
 #### BinaryTree
+BinaryTree suoriutuu ajassa O(n), koska algoritmi käy kaikissa soluissa ainoastaan kerran, eikä sen tarvitse pitää kirjaa mistään, tämän takia Kyseisellä algoritmilla pystytään tekemään erittäin suuria sokkeloita. 
+
 |  Rows   | Cols       |    Time ms |
 | ------------- | ------------- | ------------- | 
 | 10            | 10           | 0.043  |
@@ -56,6 +63,7 @@ Satunnaisesti rakennettu sokkelo, jonka koot on mainittu taulukossa. Algoritmien
 
 
 #### Dfs
+Randomized Depth-First_search(recursive backtracker) suoriutuu ajassa O(|V| + |E|), ja sen tilavaativuus on O(|V|), koska käytössämme on *Stack*, jonka tilavaativuus on pahimmassa tapauksessa O(n). Isoille sokkeloille tämä saattaa on ongelmaista, sillä *Stack* koko pitää olla vähintään sokkelon kokoinen.
 |  Rows         | Cols          | Time ms      
 | ------------- | -------------  | ------------- |
 | 10            | 10             | 0.07  |
