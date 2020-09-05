@@ -18,6 +18,7 @@ public class BinaryTree {
     private int rows;
     private int cols;
     private Cell[][] grid;
+  
 
     /**
      * init grid
@@ -29,7 +30,7 @@ public class BinaryTree {
 
         this.rows = rows;
         this.cols = cols;
-
+        int iteration = 0;
         grid = new Cell[this.rows][this.cols];
 
         for (int i = 0; i < this.rows; i++) {
@@ -40,6 +41,8 @@ public class BinaryTree {
 
     }
 
+
+
     /**
      * Start checking from cell [0][0] its neighbors
      */
@@ -48,7 +51,7 @@ public class BinaryTree {
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.cols; j++) {
                 checkNeighbour(grid[i][j]);
-
+             
             }
         }
         return grid;
@@ -83,6 +86,7 @@ public class BinaryTree {
         }
         //Check left neighbour
         if (randomWay == 0) {
+
             if (col - 1 != -1) {
 
                 current.setLeft();

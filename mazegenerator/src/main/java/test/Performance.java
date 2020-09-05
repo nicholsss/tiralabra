@@ -14,13 +14,23 @@ public class Performance {
 
     int start = 0;
     int end = 10;
-    int rows = 100;
-    int cols = 100;
+    int rows;
+    int cols;
+
+    public Performance(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+    }
 
     public void testDFS() {
         DfsRec dfs = new DfsRec(rows, cols);
         System.out.println("");
+        for (int i = 0; i < end; i++) {
+            long alku = System.nanoTime();
 
+            dfs.generateMaze();
+            long loppu = System.nanoTime();
+        }
         long alku = System.nanoTime();
 
         dfs.generateMaze();

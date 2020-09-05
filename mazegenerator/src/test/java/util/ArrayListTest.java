@@ -39,10 +39,10 @@ public class ArrayListTest {
     @Test
     public void listContainsMultipleCellTest() {
         ArrayList<Cell> list = new ArrayList<Cell>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 15; i++) {
             list.add(new Cell(i, 1));
         }
-        assertEquals(10, list.size());
+        assertEquals(15, list.size());
     }
 
     @Test

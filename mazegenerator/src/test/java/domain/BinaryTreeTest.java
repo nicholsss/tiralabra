@@ -58,4 +58,21 @@ public class BinaryTreeTest {
 
         assertEquals(current, bt.getCellFromGrid(1, 1));
     }
+    
+     @Test
+    public void cellNotHavingAllWalls() {
+        BinaryTree bt = new BinaryTree(x, y);
+
+        Cell grid[][] = bt.generateMaze();
+        boolean walledCell = true;
+         for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
+
+                if (grid[i][j].getTop() == true && grid[i][j].getRight() == true && grid[i][j].getBottom() == true && grid[i][j].getLeft() == true) {
+                    walledCell = false;
+                }
+            }
+        }
+        assertTrue(walledCell);
+    }
 }

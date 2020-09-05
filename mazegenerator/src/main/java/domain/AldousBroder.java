@@ -20,7 +20,6 @@ public class AldousBroder {
     List<Cell> neighbours;
     int rows;
     int cols;
-    int iteration;
 
     /**
      *
@@ -66,7 +65,7 @@ public class AldousBroder {
             //visited and remowe walls
             if (next.getVisited() == false) {
                 next.setVisited();
-                iteration++;
+
                 current.removeWalls(next);
                 visitedCells++;
             }

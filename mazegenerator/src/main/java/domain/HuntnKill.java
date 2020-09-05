@@ -76,7 +76,7 @@ public class HuntnKill {
                                 prev.removeWalls(current);
                             }
 
-                            //This breaks algorithm if x, y too big.
+                            //break for if unvisited cell is found.
                             break loop;
                         }
 

@@ -18,7 +18,6 @@ public class Ui {
     Scanner sc = new Scanner(System.in);
 
     public void start() {
-        
 
         int reader = 99;
         System.out.println(" __  __                _____                           _             \n"
@@ -166,10 +165,6 @@ public class Ui {
                     long btTotal = 0;
                     long hnkTotal = 0;
                     long abTotal = 0;
-                    int tempX = x;
-                    int tempY = y;
-                    x = 200;
-                    y = 200;
 
                     for (int i = 0; i < 10; i++) {
                         long alku = System.nanoTime();
@@ -178,6 +173,7 @@ public class Ui {
                         long loppu = System.nanoTime();
                         dfsTotal += (loppu - alku);
                     }
+
                     for (int i = 0; i < 10; i++) {
                         long alku = System.nanoTime();
                         BinaryTree bt = new BinaryTree(x, y);
@@ -185,19 +181,24 @@ public class Ui {
                         long loppu = System.nanoTime();
                         btTotal += (loppu - alku);
                     }
+
                     for (int i = 0; i < 10; i++) {
                         long alku = System.nanoTime();
                         HuntnKill hnk = new HuntnKill(x, y);
                         hnk.generateMaze();
                         long loppu = System.nanoTime();
                         hnkTotal += (loppu - alku);
+                        
                     }
+
                     for (int i = 0; i < 10; i++) {
                         long alku = System.nanoTime();
                         AldousBroder ab = new AldousBroder(x, y);
                         ab.generateMaze();
+                       
                         long loppu = System.nanoTime();
                         abTotal += (loppu - alku);
+                        
                     }
 
                     System.out.println("************************************");
@@ -207,9 +208,10 @@ public class Ui {
                     System.out.println("bt: " + (btTotal / 10) / 1e6 + " ms");
                     System.out.println("hnk: " + (hnkTotal / 10) / 1e6 + " ms");
                     System.out.println("ab: " + (abTotal / 10) / 1e6 + " ms");
-                    x = tempX;
-                    y = tempY;
+                    //x = tempX;
+                    //y = tempY;
                 }
+
                 if (reader == 7) {
                     System.out.print("Give row size: ");
                     int newX = sc.nextInt();
