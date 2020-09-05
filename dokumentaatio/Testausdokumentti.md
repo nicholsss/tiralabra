@@ -50,7 +50,15 @@ Sisältää ohjelman algoritmit, AldousBroder, BinaryTree, Randomized depth-firs
 | 800           | 57.4          | Content Cell  | Content Cell  |
 |1600           | 247          | Content Cell  | Content Cell  |
 
-
+#### Hunt And Kill
+|  Rows * Cols  | Time ms       | Iterations    | Second Header |  
+| ------------- | ------------- | ------------- | ------------- |
+| 10            | 0.11          | Content Cell  | Content Cell  |
+| 100           | 3.4          | Content Cell  | Content Cell  |
+| 200           | 35.8         | Content Cell  | Content Cell  |
+| 400           | 549.2         | Content Cell  | Content Cell  |
+| 800           | 23089         | Content Cell  | Content Cell  |
+|1600           | -         | Content Cell  | Content Cell  |
 
 *Binary Tree* yksi valtti on siinä ei tarvitse pitää kirjaa käydyistä soluista, eikä sen tarvitse palata taaksepäin etsimään mahdollisia ohitettuja soluja,
 koska siinä mennään systemaattisesti kaikki solut läpi kerran.
