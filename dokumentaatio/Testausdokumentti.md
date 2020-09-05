@@ -84,3 +84,6 @@ Hunt And Kill algoritmi on hyvä algoritmi isoille sokkeloille, siinä mielessä
 | 800           | 800         | 23089 | 
 |1600           | 1600        | - |
 
+### Testien toistaminen
+Testit on mahdollista toistaa ohjelman käyttöliittymää käyttäen. On kuitenkin hyvä huomioda, että suurien sokkeloiden generointi vie aikaa, ja koska tehokkuustestaus suoritetaan 10 satunnaisen sokkelon tuottamisella kestää tämä operaatio jonkin aikaa.
+    
