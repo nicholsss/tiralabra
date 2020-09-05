@@ -2,7 +2,7 @@
 
 
 ## Käyttötarkoitus
-Sovelluksen tarkoitus on luoda satunnainen labyrintti kahdella eri algoritmillä, recursive backtracking,Kruskalin algoritmilla ja Binary Tree algoritmilla
+Sovelluksen tarkoitus on luoda satunnainen labyrintti kahdella eri algoritmillä, recursive backtracking ja Binary Tree algoritmilla
 
 ## Algoritmit ja tietorakenteet
 Labyrintin luominen tapahtuu syvyyshaulla, johon on implementoitu  rekursiivinen peruuttavahaku, tietorakenteina käytän taulukkoa, ja pinoa.
