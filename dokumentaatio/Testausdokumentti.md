@@ -17,8 +17,8 @@ Testataan että Cell(solulla) on oikeat arvot. Testataan että solulta voidaan p
 ## domain
 Sisältää ohjelman algoritmit, AldousBroder, BinaryTree, Randomized depth-first search ja HuntAndKill.
 
-####AldousBroder
-|  Rows X Cols  | Time ms       | Iterations    | Second Header |  
+#### AldousBroder
+|  Rows * Cols  | Time ms       | Iterations    | Second Header |  
 | ------------- | ------------- | ------------- | ------------- |
 | 10            | 0.5           | Content Cell  | Content Cell  |
 | 100           | 27            | Content Cell  | Content Cell  |
@@ -28,26 +28,29 @@ Sisältää ohjelman algoritmit, AldousBroder, BinaryTree, Randomized depth-firs
 |1600           | 14775         | Content Cell  | Content Cell  |
 
 
-####BinaryTree
-|  Rows X Cols  | Time ms       | Iterations    | Second Header |  
+#### BinaryTree
+|  Rows * Cols  | Time ms       | Iterations    | Second Header |  
 | ------------- | ------------- | ------------- | ------------- |
-| 10            | 0.4           | Content Cell  | Content Cell  |
-| 100           | 2.3           | Content Cell  | Content Cell  |
-| 200           | 4.6           | Content Cell  | Content Cell  |
+| 10            | 0.043           | Content Cell  | Content Cell  |
+| 100           | 1.4          | Content Cell  | Content Cell  |
+| 200           | 2.9         | Content Cell  | Content Cell  |
 | 400           | 10.5          | Content Cell  | Content Cell  |
-| 800           | 40          | Content Cell  | Content Cell  |
-|1600           | 14775         | Content Cell  | Content Cell  |
+| 800           | 40            | Content Cell  | Content Cell  |
+|1600           | 162           | Content Cell  | Content Cell  |
 
 
-###
-## Recursive Backtracking Vs Binary Tree
 
-Kun annetaan molemmille algoritmeille Gridin X = 100, Y = 100, niin huomataan että
-10 otoksen jälkeen
+#### Dfs
+|  Rows * Cols  | Time ms       | Iterations    | Second Header |  
+| ------------- | ------------- | ------------- | ------------- |
+| 10            | 0.07           | Content Cell  | Content Cell  |
+| 100           | 1.4           | Content Cell  | Content Cell  |
+| 200           | 4.1          | Content Cell  | Content Cell  |
+| 400           | 15.7          | Content Cell  | Content Cell  |
+| 800           | 57.4          | Content Cell  | Content Cell  |
+|1600           | 247          | Content Cell  | Content Cell  |
 
-*Recursive backtracker* aika noin 0.0098...
 
-*Binary tree* aika noin 0.0022...
 
 *Binary Tree* yksi valtti on siinä ei tarvitse pitää kirjaa käydyistä soluista, eikä sen tarvitse palata taaksepäin etsimään mahdollisia ohitettuja soluja,
 koska siinä mennään systemaattisesti kaikki solut läpi kerran.
