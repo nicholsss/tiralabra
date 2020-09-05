@@ -63,7 +63,7 @@ BinaryTree suoriutuu ajassa O(n), koska algoritmi käy kaikissa soluissa ainoast
 
 
 #### Randomized Depth-First_search(recursive backtracker)
-Randomized Depth-First_search(recursive backtracker) suoriutuu ajassa O(|V| + |E|), ja sen tilavaativuus on O(n^2), koska käytössämme on *Stack*, jonka tilavaativuus on pahimmassa tapauksessa O(n). Isoille sokkeloille tämä saattaa on ongelmaista, sillä *Stack* koko pitää olla vähintään sokkelon kokoinen.
+Randomized Depth-First_search(recursive backtracker) suoriutuu ajassa O(|V| + |E|), ja sen tilavaativuus on O(n^2), koska käytössämme on *Stack*, jonka tilavaativuus on pahimmassa tapauksessa O(n^2). Isoille sokkeloille tämä saattaa on ongelmaista, sillä *Stack* koko pitää olla vähintään sokkelon kokoinen.
 |  Rows         | Cols          | Time ms      
 | ------------- | -------------  | ------------- |
 | 10            | 10             | 0.07  |
