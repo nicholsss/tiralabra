@@ -1,9 +1,13 @@
 # Tehokkuuden Testaus
+## JUnit testaus
+Testauksessa on käytetty JUnit testejä, joiden kattavuuden näkee alla olevasta kuvasta
 
-## Ui
+
+![jacoco test](https://github.com/nicholsss/tiralabra/blob/master/dokumentaatio/jacoco2.png)
+### Ui
 Ui on jätetty kokonaan testaamatta, koska ohjelmassa on tekstikäyttöliittymä, joten käyttöliittymän testaaminen ei ole oleellista kurssille.
 
-## Util
+### Util
 Sisältää tietorakenteet Stack, ja ArrayList, sekä olion Cell
 #### Stack
 Stackin luontivaihteessa varmistetaan että se on tyhjä, sekä sen että Stackissa toimii *pop()* ominaisuus, sillä sen toiminnallisuus on algoritmin kannalta tärkeää.
